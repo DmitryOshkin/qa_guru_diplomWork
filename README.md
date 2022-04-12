@@ -1,1 +1,1 @@
-# qa_guru_diplomWork
+# qa_guru_diplomaWork
