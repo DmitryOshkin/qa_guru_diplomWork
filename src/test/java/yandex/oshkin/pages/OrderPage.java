@@ -11,11 +11,11 @@ public class OrderPage {
     SelenideElement
             cleanOrderButton = $(".OrderFinalPrice__empty-cart"),
             cleanOrderProductButton =
-                    $(".ProductListForBasket__item .ProductCardForBasket__button-icon_remove use");
+                    $(".ProductListForBasket__item .ProductCardForBasket__button-icon_remove");
 
     @Step("Открываем страницу корзины")
     public OrderPage openOrderPage() {
-        open("/order/");
+        open("order/");
         $(".Basket__title__text")
                 .shouldHave(text("Корзина"));
         return this;

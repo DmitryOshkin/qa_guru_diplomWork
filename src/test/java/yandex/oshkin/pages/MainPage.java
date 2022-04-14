@@ -13,8 +13,8 @@ public class MainPage {
 
     @Step("Открываем главную страницу")
     public MainPage openMainPage() {
-        open();
-        $(".Main__category-wrapper .Heading")
+        open("");
+        $(".Main__category-wrapper .PopularCategoriesBox")
                 .shouldHave(text("Популярные категории"));
         return this;
     }

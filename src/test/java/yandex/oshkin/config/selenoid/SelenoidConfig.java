@@ -6,6 +6,10 @@ import org.aeonbits.owner.Config;
 public interface SelenoidConfig extends Config {
 
     String user();
-
     String password();
+    String remoteUrl();
+    String videoAttachUrl();
+    String browser();
+    String browserVersion();
+    String browserSize();
 }

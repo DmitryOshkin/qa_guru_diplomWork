@@ -13,8 +13,8 @@ public class ComparePage {
 
     @Step("Открываем страницу сравнения")
     public ComparePage openComparePage() {
-        open("/compare/");
-        $(".Heading Heading_level_2 ComparePage__heading")
+        open("compare/");
+        $(".ComparePage__heading")
                 .shouldHave(text("Сравнение товаров"));
         return this;
     }
@@ -22,8 +22,8 @@ public class ComparePage {
     @Step("Очищаем список сравнения целиком")
     public ComparePage cleanCompare() {
         cleanCompareButton.click();
-        $(".Basket__basket-empty-title")
-                .shouldHave(text("В корзине нет товаров"));
+        $(".Compare__empty-products")
+                .shouldHave(text("Нет товаров для сравнения"));
         return this;
     }
 }

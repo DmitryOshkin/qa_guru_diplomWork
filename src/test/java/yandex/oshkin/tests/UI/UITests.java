@@ -7,80 +7,86 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import yandex.oshkin.tests.TestBase;
+
+import static yandex.oshkin.tests.TestData.product_1;
+import static yandex.oshkin.tests.TestData.product_2;
 
 @Tag("UI")
 @Epic("UI")
 @Owner("oshkinda")
 public class UITests extends TestBase {
 
-    int countOrder = 0;
-    int countCompare = 0;
+    public CommonSteps commonSteps = new CommonSteps();
 
     @Test
     @DisplayName("Поиск товара")
-    void searchTest(String productCode) {
-        mainPage
-                .openMainPage()
-                .search(productCode);
-        productPage
-                .checkResultSearch(productCode);
+    void searchTest() {
+        commonSteps
+                .search(product_1);
     }
 
     @Test
     @DisplayName("Добавление товара в корзину")
-    void addProductOrderTest(String productCode) {
-        searchTest(productCode);
-        productPage
-                .addProductOrder()
-                .checkResultAddOrder(productCode)
-                .closePopUpOrder();
-        countOrder = countOrder + 1;
-        mainPage
-                .checkOrderCount(String.valueOf(countOrder));
+    void addProductOrderTest() {
+        commonSteps
+                .search(product_2)
+                .addProductOrder(product_2);
     }
 
     @ParameterizedTest(name = "Добавление товара {0} в список сравнения")
     @ValueSource(strings = {"1442049", "1442048", "1114499"})
-    @DisplayName("Добавление товара {0} в список сравнения")
     void addProductCompareTest(String productCode) {
-        searchTest(productCode);
-        productPage
+        commonSteps
+                .search(productCode)
                 .addProductCompare();
-        countCompare = countCompare + 1;
-        mainPage
-                .checkCompareCount(String.valueOf(countCompare));
     }
 
     @ParameterizedTest(name = "Удаление товара из корзины")
-    @CsvFileSource(resources = "/data/dataCsv.csv")
-    @DisplayName("Удаление товара из корзины")
-    void delProductOrderTest(String productCode) {
-        addProductOrderTest(productCode);
+    @CsvSource(value = {"1442049, 1442048, 1114499"})
+    void delProductOrderTest(String productCode_1, String productCode_2, String productCode_3) {
+        commonSteps
+                .search(productCode_1)
+                .addProductOrder(productCode_1)
+                .search(productCode_2)
+                .addProductOrder(productCode_2)
+                .search(productCode_3)
+                .addProductOrder(productCode_3);
         orderPage
                 .openOrderPage()
                 .delProductOrder();
-        countOrder = countOrder - 1;
+        commonSteps.countOrder = commonSteps.countOrder - 1;
         mainPage
-                .checkOrderCount(String.valueOf(countOrder));
+                .checkOrderCount(String.valueOf(commonSteps.countOrder));
     }
 
     @ParameterizedTest(name = "Полная очистка корзины")
     @CsvFileSource(resources = "/data/dataCsv.csv")
-    @DisplayName("Полная очистка корзины")
-    void cleanOrderTest(String productCode) {
-        addProductOrderTest(productCode);
+    void cleanOrderTest(String productCode_1, String productCode_2, String productCode_3) {
+        commonSteps
+                .search(productCode_1)
+                .addProductOrder(productCode_1)
+                .search(productCode_2)
+                .addProductOrder(productCode_2)
+                .search(productCode_3)
+                .addProductOrder(productCode_3);
         orderPage
                 .openOrderPage()
                 .cleanOrder();
     }
 
     @ParameterizedTest(name = "Полная очистка списка сравнения")
-    @ValueSource(strings = {"1442049", "1442048", "1114499"})
-    @DisplayName("Полная очистка списка сравнения")
-    void cleanCompareTest(String productCode) {
-        addProductCompareTest(productCode);
+    @CsvFileSource(resources = "/data/dataCsv.csv")
+    void cleanCompareTest(String productCode_1, String productCode_2, String productCode_3) {
+        commonSteps
+                .search(productCode_1)
+                .addProductCompare()
+                .search(productCode_2)
+                .addProductCompare()
+                .search(productCode_3)
+                .addProductCompare();
         comparePage
                 .openComparePage()
                 .cleanCompare();

@@ -105,9 +105,9 @@ tasks.withType(Test) {
     }
 }
 
-task test_randomValues(type: Test) {
+task ui_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "randomValues"
+        includeTags "UI"
     }
 }
 
