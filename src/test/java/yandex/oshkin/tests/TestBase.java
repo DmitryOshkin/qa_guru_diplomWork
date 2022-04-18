@@ -32,7 +32,7 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
-        open("");
+        open();
     }
 
     @AfterEach
