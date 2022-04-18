@@ -1,4 +1,4 @@
-package yandex.oshkin.tests.UI;
+package yandex.oshkin.tests.ui;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
@@ -25,35 +25,35 @@ public class UITests extends TestBase {
     @DisplayName("Поиск товара")
     void searchTest() {
         commonSteps
-                .search(product_1);
+                .searchProduct(product_1);
     }
 
     @Test
     @DisplayName("Добавление товара в корзину")
     void addProductOrderTest() {
         commonSteps
-                .search(product_2)
-                .addProductOrder(product_2);
+                .searchProduct(product_2)
+                .addToOrder(product_2);
     }
 
     @ParameterizedTest(name = "Добавление товара {0} в список сравнения")
     @ValueSource(strings = {"1442049", "1442048", "1114499"})
     void addProductCompareTest(String productCode) {
         commonSteps
-                .search(productCode)
-                .addProductCompare();
+                .searchProduct(productCode)
+                .addToCompare();
     }
 
     @ParameterizedTest(name = "Удаление товара из корзины")
     @CsvSource(value = {"1442049, 1442048, 1114499"})
     void delProductOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         commonSteps
-                .search(productCode_1)
-                .addProductOrder(productCode_1)
-                .search(productCode_2)
-                .addProductOrder(productCode_2)
-                .search(productCode_3)
-                .addProductOrder(productCode_3);
+                .searchProduct(productCode_1)
+                .addToOrder(productCode_1)
+                .searchProduct(productCode_2)
+                .addToOrder(productCode_2)
+                .searchProduct(productCode_3)
+                .addToOrder(productCode_3);
         orderPage
                 .openOrderPage()
                 .delProductOrder();
@@ -66,12 +66,12 @@ public class UITests extends TestBase {
     @CsvFileSource(resources = "/data/dataCsv.csv")
     void cleanOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         commonSteps
-                .search(productCode_1)
-                .addProductOrder(productCode_1)
-                .search(productCode_2)
-                .addProductOrder(productCode_2)
-                .search(productCode_3)
-                .addProductOrder(productCode_3);
+                .searchProduct(productCode_1)
+                .addToOrder(productCode_1)
+                .searchProduct(productCode_2)
+                .addToOrder(productCode_2)
+                .searchProduct(productCode_3)
+                .addToOrder(productCode_3);
         orderPage
                 .openOrderPage()
                 .cleanOrder();
@@ -81,12 +81,12 @@ public class UITests extends TestBase {
     @CsvFileSource(resources = "/data/dataCsv.csv")
     void cleanCompareTest(String productCode_1, String productCode_2, String productCode_3) {
         commonSteps
-                .search(productCode_1)
-                .addProductCompare()
-                .search(productCode_2)
-                .addProductCompare()
-                .search(productCode_3)
-                .addProductCompare();
+                .searchProduct(productCode_1)
+                .addToCompare()
+                .searchProduct(productCode_2)
+                .addToCompare()
+                .searchProduct(productCode_3)
+                .addToCompare();
         comparePage
                 .openComparePage()
                 .cleanCompare();

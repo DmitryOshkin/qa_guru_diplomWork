@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ProductPage {
     SelenideElement
-            addOrderButton = $(".js--AddToCart .Button__text"),
-            addCompareButton = $(".js--ProductHeader__add-to-compare"),
+            addOrderButton = $(".ProductCardLayout .ProductHeader__add-to-cart"),
+            addCompareButton = $(".ProductCardLayout .js--ProductHeader__add-to-compare"),
             closePopUpButton = $(".UpsaleBasket__main-popup__close path");
 
     @Step("Проверяем результат поиска")
