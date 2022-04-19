@@ -36,7 +36,7 @@ public class APITests extends TestBase {
     }
 
     @Test
-    @DisplayName("Удаление всех товаров из корзины")
+    @DisplayName("Очистка корзины")
     public void clearOrderProductTest() {
 
         commonStepsAPI
