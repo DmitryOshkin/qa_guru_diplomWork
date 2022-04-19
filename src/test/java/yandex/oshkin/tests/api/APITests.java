@@ -7,15 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import yandex.oshkin.tests.TestBase;
 import yandex.oshkin.tests.commonsteps.CommonStepsAPI;
-import yandex.oshkin.tests.commonsteps.CommonStepsUI;
 
-import java.util.Map;
-
-import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
 import static yandex.oshkin.tests.TestData.*;
 
 @Tag("API")
