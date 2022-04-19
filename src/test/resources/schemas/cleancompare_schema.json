@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "storage": {
+        "compare": {
+          "categoryList": [],
+          "count": 0
+        },
+        "wishlist": null,
+        "cart": null,
+        "authorized": []
+      },
+      "drivebackItems": [],
+      "ret": 1
+    }
+  ],
+  "required": [
+    "storage",
+    "drivebackItems",
+    "ret"
+  ],
+  "properties": {
+    "storage": {
+      "$id": "#/properties/storage",
+      "type": "object",
+      "title": "The storage schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "compare": {
+            "categoryList": [],
+            "count": 0
+          },
+          "wishlist": null,
+          "cart": null,
+          "authorized": []
+        }
+      ],
+      "required": [
+        "compare",
+        "wishlist",
+        "cart",
+        "authorized"
+      ],
+      "properties": {
+        "compare": {
+          "$id": "#/properties/storage/properties/compare",
+          "type": "object",
+          "title": "The compare schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "categoryList": [],
+              "count": 0
+            }
+          ],
+          "required": [
+            "categoryList",
+            "count"
+          ],
+          "properties": {
+            "categoryList": {
+              "$id": "#/properties/storage/properties/compare/properties/categoryList",
+              "type": "array",
+              "title": "The categoryList schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                []
+              ],
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/storage/properties/compare/properties/categoryList/items"
+              }
+            },
+            "count": {
+              "$id": "#/properties/storage/properties/compare/properties/count",
+              "type": "integer",
+              "title": "The count schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "wishlist": {
+          "$id": "#/properties/storage/properties/wishlist",
+          "type": "null",
+          "title": "The wishlist schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "cart": {
+          "$id": "#/properties/storage/properties/cart",
+          "type": "null",
+          "title": "The cart schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "authorized": {
+          "$id": "#/properties/storage/properties/authorized",
+          "type": "array",
+          "title": "The authorized schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            []
+          ],
+          "additionalItems": true,
+          "items": {
+            "$id": "#/properties/storage/properties/authorized/items"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "drivebackItems": {
+      "$id": "#/properties/drivebackItems",
+      "type": "array",
+      "title": "The drivebackItems schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        []
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/drivebackItems/items"
+      }
+    },
+    "ret": {
+      "$id": "#/properties/ret",
+      "type": "integer",
+      "title": "The ret schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    }
+  },
+  "additionalProperties": true
+}

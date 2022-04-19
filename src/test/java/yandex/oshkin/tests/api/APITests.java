@@ -1,54 +1,85 @@
 package yandex.oshkin.tests.api;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import yandex.oshkin.tests.TestBase;
+import yandex.oshkin.tests.commonsteps.CommonStepsAPI;
+import yandex.oshkin.tests.commonsteps.CommonStepsUI;
 
 import java.util.Map;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+import static yandex.oshkin.tests.TestData.*;
 
+@Tag("API")
+@Epic("API")
+@Owner("oshkinda")
 public class APITests extends TestBase {
 
-    public Map<String, String> getSessionCookies() {
-        return step("Получаем cookies сессии", () -> {
-            Map<String, String> sessionCookies =
-                    given()
-                            .log().all()
-                            .when()
-                            .get("")
-                            .then()
-                            .log().all()
-                            .statusCode(200)
-                            .extract()
-                            .cookies();
+    public CommonStepsAPI commonStepsAPI = new CommonStepsAPI();
 
-            return sessionCookies;
-        });
+    @Test
+    @DisplayName("Добавление товара в корзину и изменение его количества через api")
+    public void addToOrderProductTest() {
+
+        commonStepsAPI
+                .addToOrder(product_2, 4)
+                .changeProductCountToOrder(product_2, 7);
     }
 
     @Test
-    @DisplayName("Добавление товара в корзину через api")
-    public void addToOrderProduct() {
+    @DisplayName("Удаление товара из корзины")
+    public void delOrderProductTest() {
 
-        Map<String, String> sessionCookies = getSessionCookies();
+        commonStepsAPI
+                .addToOrder(product_2, 4)
+                .delProductOrder(product_2);
+    }
 
-        String tUid = "_tuid=" + sessionCookies.get("_tuid") + ";";
-        int amount = 4;
+    @Test
+    @DisplayName("Удаление всех товаров из корзины")
+    public void clearOrderProductTest() {
 
-        given()
-                .cookie(tUid)
-                .formParam("amount", amount)
-                .log().uri()
-                .log().params()
-                .log().cookies()
-                .when()
-                .get("basket/add/product/1442048/")
-                .then()
-                .log().all()
-                .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"));
+        commonStepsAPI
+                .addToOrder(product_2, 4)
+                .addToOrder(product_1, 3)
+                .addToOrder(product_3, 8)
+                .clearOrder();
+    }
+
+    @Test
+    @DisplayName("Добавление товара в список сравнения")
+    public void addToCompareTest() {
+
+        commonStepsAPI
+                .addToCompare(product_1, 211);
+    }
+
+    @Test
+    @DisplayName("Удаление товара из списка сравнения")
+    public void delProductCompareTest() {
+
+        commonStepsAPI
+                .addToCompare(product_1, 211)
+                .addToCompare(product_2, 211)
+                .delProductCompare(product_1, 211);
+    }
+
+    @Test
+    @DisplayName("Очистка списка сравнения")
+    public void cleanProductCompareTest() {
+
+        commonStepsAPI
+                .addToCompare(product_1, 211)
+                .addToCompare(product_2, 211)
+                .addToCompare(product_3, 211)
+                .cleanProductCompare(211);
     }
 }

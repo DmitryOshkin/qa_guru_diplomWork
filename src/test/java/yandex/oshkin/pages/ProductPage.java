@@ -14,7 +14,7 @@ public class ProductPage {
 
     @Step("Проверяем результат поиска")
     public ProductPage checkResultSearch(String value) {
-        $(".ProductHeader__product-id")
+        $(".ProductCardLayout .ProductHeader__product-id")
                 .shouldHave(text("Код товара: " + value));
         return this;
     }

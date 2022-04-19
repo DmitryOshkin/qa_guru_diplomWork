@@ -1,0 +1,830 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "storage": {
+        "compare": {
+          "categoryList": {
+            "211": {
+              "name": "Чайники электрические",
+              "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+              "categoryImage": "1016031_v01_b.jpg",
+              "list": {
+                "1442048": {
+                  "id": "1442048",
+                  "clubPrice": 6499,
+                  "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                  "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                  "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                  "brandName": "POLARIS",
+                  "amount": 1,
+                  "cost": 6499,
+                  "order": false,
+                  "price": 6499,
+                  "imageName": "1442048_v01_s.jpg",
+                  "storeStatus": 2,
+                  "stockStatus": 25,
+                  "stockStatusReg": 0,
+                  "marketingStatus": "",
+                  "rating": 5,
+                  "totalOpinion": 91,
+                  "bonus": 65,
+                  "categoryId": 211,
+                  "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                  "categoryName": "Чайники электрические",
+                  "clubPriceStr": "6499",
+                  "priceStr": "6499",
+                  "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                  "photoPath": "1442048_v01_s.jpg",
+                  "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                  "isAvailable": true,
+                  "hideClubPrice": true
+                }
+              },
+              "id": 211,
+              "count": 1
+            }
+          },
+          "count": 1
+        },
+        "wishlist": null,
+        "cart": null,
+        "authorized": []
+      },
+      "drivebackItems": [],
+      "ret": 1
+    }
+  ],
+  "required": [
+    "storage",
+    "drivebackItems",
+    "ret"
+  ],
+  "properties": {
+    "storage": {
+      "$id": "#/properties/storage",
+      "type": "object",
+      "title": "The storage schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "compare": {
+            "categoryList": {
+              "211": {
+                "name": "Чайники электрические",
+                "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                "categoryImage": "1016031_v01_b.jpg",
+                "list": {
+                  "1442048": {
+                    "id": "1442048",
+                    "clubPrice": 6499,
+                    "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                    "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                    "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                    "brandName": "POLARIS",
+                    "amount": 1,
+                    "cost": 6499,
+                    "order": false,
+                    "price": 6499,
+                    "imageName": "1442048_v01_s.jpg",
+                    "storeStatus": 2,
+                    "stockStatus": 25,
+                    "stockStatusReg": 0,
+                    "marketingStatus": "",
+                    "rating": 5,
+                    "totalOpinion": 91,
+                    "bonus": 65,
+                    "categoryId": 211,
+                    "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                    "categoryName": "Чайники электрические",
+                    "clubPriceStr": "6499",
+                    "priceStr": "6499",
+                    "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                    "photoPath": "1442048_v01_s.jpg",
+                    "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                    "isAvailable": true,
+                    "hideClubPrice": true
+                  }
+                },
+                "id": 211,
+                "count": 1
+              }
+            },
+            "count": 1
+          },
+          "wishlist": null,
+          "cart": null,
+          "authorized": []
+        }
+      ],
+      "required": [
+        "compare",
+        "wishlist",
+        "cart",
+        "authorized"
+      ],
+      "properties": {
+        "compare": {
+          "$id": "#/properties/storage/properties/compare",
+          "type": "object",
+          "title": "The compare schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "categoryList": {
+                "211": {
+                  "name": "Чайники электрические",
+                  "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                  "categoryImage": "1016031_v01_b.jpg",
+                  "list": {
+                    "1442048": {
+                      "id": "1442048",
+                      "clubPrice": 6499,
+                      "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                      "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                      "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                      "brandName": "POLARIS",
+                      "amount": 1,
+                      "cost": 6499,
+                      "order": false,
+                      "price": 6499,
+                      "imageName": "1442048_v01_s.jpg",
+                      "storeStatus": 2,
+                      "stockStatus": 25,
+                      "stockStatusReg": 0,
+                      "marketingStatus": "",
+                      "rating": 5,
+                      "totalOpinion": 91,
+                      "bonus": 65,
+                      "categoryId": 211,
+                      "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                      "categoryName": "Чайники электрические",
+                      "clubPriceStr": "6499",
+                      "priceStr": "6499",
+                      "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                      "photoPath": "1442048_v01_s.jpg",
+                      "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                      "isAvailable": true,
+                      "hideClubPrice": true
+                    }
+                  },
+                  "id": 211,
+                  "count": 1
+                }
+              },
+              "count": 1
+            }
+          ],
+          "required": [
+            "categoryList",
+            "count"
+          ],
+          "properties": {
+            "categoryList": {
+              "$id": "#/properties/storage/properties/compare/properties/categoryList",
+              "type": "object",
+              "title": "The categoryList schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "211": {
+                    "name": "Чайники электрические",
+                    "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                    "categoryImage": "1016031_v01_b.jpg",
+                    "list": {
+                      "1442048": {
+                        "id": "1442048",
+                        "clubPrice": 6499,
+                        "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                        "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                        "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                        "brandName": "POLARIS",
+                        "amount": 1,
+                        "cost": 6499,
+                        "order": false,
+                        "price": 6499,
+                        "imageName": "1442048_v01_s.jpg",
+                        "storeStatus": 2,
+                        "stockStatus": 25,
+                        "stockStatusReg": 0,
+                        "marketingStatus": "",
+                        "rating": 5,
+                        "totalOpinion": 91,
+                        "bonus": 65,
+                        "categoryId": 211,
+                        "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                        "categoryName": "Чайники электрические",
+                        "clubPriceStr": "6499",
+                        "priceStr": "6499",
+                        "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                        "photoPath": "1442048_v01_s.jpg",
+                        "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                        "isAvailable": true,
+                        "hideClubPrice": true
+                      }
+                    },
+                    "id": 211,
+                    "count": 1
+                  }
+                }
+              ],
+              "required": [
+                "211"
+              ],
+              "properties": {
+                "211": {
+                  "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211",
+                  "type": "object",
+                  "title": "The 211 schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                    {
+                      "name": "Чайники электрические",
+                      "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                      "categoryImage": "1016031_v01_b.jpg",
+                      "list": {
+                        "1442048": {
+                          "id": "1442048",
+                          "clubPrice": 6499,
+                          "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                          "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                          "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                          "brandName": "POLARIS",
+                          "amount": 1,
+                          "cost": 6499,
+                          "order": false,
+                          "price": 6499,
+                          "imageName": "1442048_v01_s.jpg",
+                          "storeStatus": 2,
+                          "stockStatus": 25,
+                          "stockStatusReg": 0,
+                          "marketingStatus": "",
+                          "rating": 5,
+                          "totalOpinion": 91,
+                          "bonus": 65,
+                          "categoryId": 211,
+                          "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                          "categoryName": "Чайники электрические",
+                          "clubPriceStr": "6499",
+                          "priceStr": "6499",
+                          "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                          "photoPath": "1442048_v01_s.jpg",
+                          "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                          "isAvailable": true,
+                          "hideClubPrice": true
+                        }
+                      },
+                      "id": 211,
+                      "count": 1
+                    }
+                  ],
+                  "required": [
+                    "name",
+                    "url",
+                    "categoryImage",
+                    "list",
+                    "id",
+                    "count"
+                  ],
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/name",
+                      "type": "string",
+                      "title": "The name schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "Чайники электрические"
+                      ]
+                    },
+                    "url": {
+                      "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/url",
+                      "type": "string",
+                      "title": "The url schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/"
+                      ]
+                    },
+                    "categoryImage": {
+                      "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/categoryImage",
+                      "type": "string",
+                      "title": "The categoryImage schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "1016031_v01_b.jpg"
+                      ]
+                    },
+                    "list": {
+                      "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list",
+                      "type": "object",
+                      "title": "The list schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": {},
+                      "examples": [
+                        {
+                          "1442048": {
+                            "id": "1442048",
+                            "clubPrice": 6499,
+                            "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                            "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                            "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                            "brandName": "POLARIS",
+                            "amount": 1,
+                            "cost": 6499,
+                            "order": false,
+                            "price": 6499,
+                            "imageName": "1442048_v01_s.jpg",
+                            "storeStatus": 2,
+                            "stockStatus": 25,
+                            "stockStatusReg": 0,
+                            "marketingStatus": "",
+                            "rating": 5,
+                            "totalOpinion": 91,
+                            "bonus": 65,
+                            "categoryId": 211,
+                            "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                            "categoryName": "Чайники электрические",
+                            "clubPriceStr": "6499",
+                            "priceStr": "6499",
+                            "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                            "photoPath": "1442048_v01_s.jpg",
+                            "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                            "isAvailable": true,
+                            "hideClubPrice": true
+                          }
+                        }
+                      ],
+                      "required": [
+                        "1442048"
+                      ],
+                      "properties": {
+                        "1442048": {
+                          "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048",
+                          "type": "object",
+                          "title": "The 1442048 schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": {},
+                          "examples": [
+                            {
+                              "id": "1442048",
+                              "clubPrice": 6499,
+                              "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                              "shortName": "Чайник электрический Polaris PWK 1715 CGL, черный",
+                              "shortCard": "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный",
+                              "brandName": "POLARIS",
+                              "amount": 1,
+                              "cost": 6499,
+                              "order": false,
+                              "price": 6499,
+                              "imageName": "1442048_v01_s.jpg",
+                              "storeStatus": 2,
+                              "stockStatus": 25,
+                              "stockStatusReg": 0,
+                              "marketingStatus": "",
+                              "rating": 5,
+                              "totalOpinion": 91,
+                              "bonus": 65,
+                              "categoryId": 211,
+                              "categoryPath": "large_and_small_appliances/small_appliances/kettles",
+                              "categoryName": "Чайники электрические",
+                              "clubPriceStr": "6499",
+                              "priceStr": "6499",
+                              "url": "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/",
+                              "photoPath": "1442048_v01_s.jpg",
+                              "photoPathUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                              "isAvailable": true,
+                              "hideClubPrice": true
+                            }
+                          ],
+                          "required": [
+                            "id",
+                            "clubPrice",
+                            "name",
+                            "shortName",
+                            "shortCard",
+                            "brandName",
+                            "amount",
+                            "cost",
+                            "order",
+                            "price",
+                            "imageName",
+                            "storeStatus",
+                            "stockStatus",
+                            "stockStatusReg",
+                            "marketingStatus",
+                            "rating",
+                            "totalOpinion",
+                            "bonus",
+                            "categoryId",
+                            "categoryPath",
+                            "categoryName",
+                            "clubPriceStr",
+                            "priceStr",
+                            "url",
+                            "photoPath",
+                            "photoPathUrl",
+                            "isAvailable",
+                            "hideClubPrice"
+                          ],
+                          "properties": {
+                            "id": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/id",
+                              "type": "string",
+                              "title": "The id schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "1442048"
+                              ]
+                            },
+                            "clubPrice": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/clubPrice",
+                              "type": "integer",
+                              "title": "The clubPrice schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                6499
+                              ]
+                            },
+                            "name": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/name",
+                              "type": "string",
+                              "title": "The name schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный"
+                              ]
+                            },
+                            "shortName": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/shortName",
+                              "type": "string",
+                              "title": "The shortName schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "Чайник электрический Polaris PWK 1715 CGL, черный"
+                              ]
+                            },
+                            "shortCard": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/shortCard",
+                              "type": "string",
+                              "title": "The shortCard schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "мощность - 2200Вт; объем - 1.7л; корпус - стекло и нержавеющая сталь; фильтр от накипи, подсветка воды; цвет - черный"
+                              ]
+                            },
+                            "brandName": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/brandName",
+                              "type": "string",
+                              "title": "The brandName schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "POLARIS"
+                              ]
+                            },
+                            "amount": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/amount",
+                              "type": "integer",
+                              "title": "The amount schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                1
+                              ]
+                            },
+                            "cost": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/cost",
+                              "type": "integer",
+                              "title": "The cost schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                6499
+                              ]
+                            },
+                            "order": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/order",
+                              "type": "boolean",
+                              "title": "The order schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": false,
+                              "examples": [
+                                false
+                              ]
+                            },
+                            "price": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/price",
+                              "type": "integer",
+                              "title": "The price schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                6499
+                              ]
+                            },
+                            "imageName": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/imageName",
+                              "type": "string",
+                              "title": "The imageName schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "1442048_v01_s.jpg"
+                              ]
+                            },
+                            "storeStatus": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/storeStatus",
+                              "type": "integer",
+                              "title": "The storeStatus schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                2
+                              ]
+                            },
+                            "stockStatus": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/stockStatus",
+                              "type": "integer",
+                              "title": "The stockStatus schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                25
+                              ]
+                            },
+                            "stockStatusReg": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/stockStatusReg",
+                              "type": "integer",
+                              "title": "The stockStatusReg schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                0
+                              ]
+                            },
+                            "marketingStatus": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/marketingStatus",
+                              "type": "string",
+                              "title": "The marketingStatus schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                ""
+                              ]
+                            },
+                            "rating": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/rating",
+                              "type": "integer",
+                              "title": "The rating schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                5
+                              ]
+                            },
+                            "totalOpinion": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/totalOpinion",
+                              "type": "integer",
+                              "title": "The totalOpinion schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                91
+                              ]
+                            },
+                            "bonus": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/bonus",
+                              "type": "integer",
+                              "title": "The bonus schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                65
+                              ]
+                            },
+                            "categoryId": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/categoryId",
+                              "type": "integer",
+                              "title": "The categoryId schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                211
+                              ]
+                            },
+                            "categoryPath": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/categoryPath",
+                              "type": "string",
+                              "title": "The categoryPath schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "large_and_small_appliances/small_appliances/kettles"
+                              ]
+                            },
+                            "categoryName": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/categoryName",
+                              "type": "string",
+                              "title": "The categoryName schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "Чайники электрические"
+                              ]
+                            },
+                            "clubPriceStr": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/clubPriceStr",
+                              "type": "string",
+                              "title": "The clubPriceStr schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "6499"
+                              ]
+                            },
+                            "priceStr": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/priceStr",
+                              "type": "string",
+                              "title": "The priceStr schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "6499"
+                              ]
+                            },
+                            "url": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/url",
+                              "type": "string",
+                              "title": "The url schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "https://www.citilink.ru/product/chainik-elektricheskii-polaris-pwk-1715-cgl-2200vt-chernyi-1442048/"
+                              ]
+                            },
+                            "photoPath": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/photoPath",
+                              "type": "string",
+                              "title": "The photoPath schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "1442048_v01_s.jpg"
+                              ]
+                            },
+                            "photoPathUrl": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/photoPathUrl",
+                              "type": "string",
+                              "title": "The photoPathUrl schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                "https://items.s1.citilink.ru/1442048_v01_s.jpg"
+                              ]
+                            },
+                            "isAvailable": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/isAvailable",
+                              "type": "boolean",
+                              "title": "The isAvailable schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": false,
+                              "examples": [
+                                true
+                              ]
+                            },
+                            "hideClubPrice": {
+                              "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/list/properties/1442048/properties/hideClubPrice",
+                              "type": "boolean",
+                              "title": "The hideClubPrice schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": false,
+                              "examples": [
+                                true
+                              ]
+                            }
+                          },
+                          "additionalProperties": true
+                        }
+                      },
+                      "additionalProperties": true
+                    },
+                    "id": {
+                      "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/id",
+                      "type": "integer",
+                      "title": "The id schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        211
+                      ]
+                    },
+                    "count": {
+                      "$id": "#/properties/storage/properties/compare/properties/categoryList/properties/211/properties/count",
+                      "type": "integer",
+                      "title": "The count schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        1
+                      ]
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": true
+            },
+            "count": {
+              "$id": "#/properties/storage/properties/compare/properties/count",
+              "type": "integer",
+              "title": "The count schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "wishlist": {
+          "$id": "#/properties/storage/properties/wishlist",
+          "type": "null",
+          "title": "The wishlist schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "cart": {
+          "$id": "#/properties/storage/properties/cart",
+          "type": "null",
+          "title": "The cart schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "authorized": {
+          "$id": "#/properties/storage/properties/authorized",
+          "type": "array",
+          "title": "The authorized schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            []
+          ],
+          "additionalItems": true,
+          "items": {
+            "$id": "#/properties/storage/properties/authorized/items"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "drivebackItems": {
+      "$id": "#/properties/drivebackItems",
+      "type": "array",
+      "title": "The drivebackItems schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        []
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/drivebackItems/items"
+      }
+    },
+    "ret": {
+      "$id": "#/properties/ret",
+      "type": "integer",
+      "title": "The ret schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    }
+  },
+  "additionalProperties": true
+}

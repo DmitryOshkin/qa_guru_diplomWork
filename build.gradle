@@ -111,9 +111,9 @@ task ui_tests(type: Test) {
     }
 }
 
-task test_exactValues(type: Test) {
+task api_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "exactValues"
+        includeTags "API"
     }
 }
 

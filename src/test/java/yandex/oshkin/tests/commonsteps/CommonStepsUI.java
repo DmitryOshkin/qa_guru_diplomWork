@@ -1,15 +1,15 @@
-package yandex.oshkin.tests.ui;
+package yandex.oshkin.tests.commonsteps;
 
 import io.qameta.allure.Step;
 import yandex.oshkin.tests.TestBase;
 
-public class CommonSteps extends TestBase {
+public class CommonStepsUI extends TestBase {
 
-    int countOrder = 0;
+    public int countOrder = 0;
     int countCompare = 0;
 
     @Step("Ищем товар")
-    public CommonSteps searchProduct(String productCode) {
+    public CommonStepsUI searchProduct(String productCode) {
         mainPage
                 .openMainPage()
                 .search(productCode);
@@ -19,7 +19,7 @@ public class CommonSteps extends TestBase {
     }
 
     @Step("Добавляем товар в корзину")
-    public CommonSteps addToOrder(String productCode) {
+    public CommonStepsUI addToOrder(String productCode) {
         productPage
                 .addProductOrder()
                 .checkResultAddOrder(productCode)
@@ -31,7 +31,7 @@ public class CommonSteps extends TestBase {
     }
 
     @Step("Добавляем товар в список сравнения")
-    public CommonSteps addToCompare() {
+    public CommonStepsUI addToCompare() {
         productPage
                 .addProductCompare();
         countCompare = countCompare + 1;
