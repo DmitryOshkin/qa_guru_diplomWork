@@ -9,6 +9,8 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.*;
+import static yandex.oshkin.spec.Specs.request;
+import static yandex.oshkin.spec.Specs.responseSpec200;
 
 public class CommonStepsAPI extends TestBase {
 
@@ -16,7 +18,7 @@ public class CommonStepsAPI extends TestBase {
     int basketCount = 0;
 
     @Step("Получаем cookies сессии")
-    public Map<String, String> getSessionCookies() {
+    public static Map<String, String> getSessionCookies() {
         return
                 step("Получаем cookies сессии", () -> {
                     Map<String, String> sessionCookies =
@@ -34,24 +36,18 @@ public class CommonStepsAPI extends TestBase {
                 });
     }
 
-    Map<String, String> sessionCookies = getSessionCookies();
-    String tUid = "_tuid=" + sessionCookies.get("_tuid") + ";";
-
     @Step("Добавляем товар в корзину")
     public CommonStepsAPI addToOrder(String productCode, int count) {
         basketCount = basketCount + count;
 
         given()
-                .cookie(tUid)
+                .spec(request)
                 .formParam("amount", count)
-                .log().uri()
                 .log().params()
-                .log().cookies()
                 .when()
                 .get("basket/add/product/" + productCode + "/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
                 .body("storage.cart.list." + productCode + ".id", is(productCode))
                 .body("storage.cart.list." + productCode + ".amount", is(count))
@@ -64,14 +60,11 @@ public class CommonStepsAPI extends TestBase {
         changeAmount = changeAmount + count;
 
         given()
-                .cookie(tUid)
-                .log().uri()
-                .log().cookies()
+                .spec(request)
                 .when()
                 .get("basket/change/amount/" + productCode + "/" + changeAmount + "/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
                 .body("storage.cart.list." + productCode + ".id", is(productCode))
                 .body("storage.cart.list." + productCode + ".amount", is(changeAmount));
@@ -82,14 +75,11 @@ public class CommonStepsAPI extends TestBase {
     public CommonStepsAPI delProductOrder(String productCode) {
 
         given()
-                .cookie(tUid)
-                .log().uri()
-                .log().cookies()
+                .spec(request)
                 .when()
                 .get("basket/remove/" + productCode + "/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/delorderproduct_schema.json"))
                 .body("storage.cart.list", not(productCode))
                 .body("storage.cart.basketCount", is(0));
@@ -100,14 +90,11 @@ public class CommonStepsAPI extends TestBase {
     public CommonStepsAPI clearOrder() {
 
         given()
-                .cookie(tUid)
-                .log().uri()
-                .log().cookies()
+                .spec(request)
                 .when()
                 .get("basket/clear/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
                 .body("storage.cart.list", is(empty()))
                 .body("storage.cart.basketCount", is(0));
@@ -118,14 +105,11 @@ public class CommonStepsAPI extends TestBase {
     public CommonStepsAPI addToCompare(String productCode, int category) {
 
         given()
-                .cookie(tUid)
-                .log().uri()
-                .log().cookies()
+                .spec(request)
                 .when()
                 .get("compare/add/product/" + productCode + "/" + category + "/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtocompareproduct_schema.json"))
                 .body("storage.compare.categoryList." + category + ".list." + productCode + ".id", is(productCode));
         return this;
@@ -135,14 +119,11 @@ public class CommonStepsAPI extends TestBase {
     public CommonStepsAPI delProductCompare(String productCode, int category) {
 
         given()
-                .cookie(tUid)
-                .log().uri()
-                .log().cookies()
+                .spec(request)
                 .when()
                 .get("compare/remove/product/" + productCode + "/" + category + "/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/delcompareproduct_schema.json"))
                 .body("storage.compare.categoryList." + category + ".list.", not(productCode));
         return this;
@@ -152,14 +133,11 @@ public class CommonStepsAPI extends TestBase {
     public CommonStepsAPI cleanProductCompare(int category) {
 
         given()
-                .cookie(tUid)
-                .log().uri()
-                .log().cookies()
+                .spec(request)
                 .when()
                 .get("compare/remove/category/" + category + "/")
                 .then()
-                .log().all()
-                .statusCode(200)
+                .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/cleancompare_schema.json"))
                 .body("storage.compare.categoryList." + category + ".list.", not(category))
                 .body("storage.compare.count", is(0));
