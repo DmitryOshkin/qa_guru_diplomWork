@@ -39,7 +39,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
                 .body("app_url", is(notNullValue()))
                 .extract().path("app_url").toString();
     }
-    
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
