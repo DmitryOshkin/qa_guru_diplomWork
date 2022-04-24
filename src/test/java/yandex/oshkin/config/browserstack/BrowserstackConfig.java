@@ -7,7 +7,7 @@ public interface BrowserstackConfig extends Config {
 
     String browserstackUser();
     String browserstackKey();
-    String browserstackSessionId();
+    String browserstackUploadApkUrl();
     String browserstackURL();
     String browserstackDeviceVersion();
     String browserstackDeviceName();
