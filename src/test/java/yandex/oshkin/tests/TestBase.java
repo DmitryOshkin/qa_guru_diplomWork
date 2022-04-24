@@ -6,6 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import yandex.oshkin.drivers.UIWebDriver;
 import yandex.oshkin.pages.ComparePage;
 import yandex.oshkin.pages.MainPage;
 import yandex.oshkin.pages.OrderPage;
@@ -25,12 +26,13 @@ public class TestBase {
     public ComparePage comparePage = new ComparePage();
     public StepsMobile stepMobile = new StepsMobile();
 
-    private static final String deviceHost = System.getProperty("deviceHost", "ui");//ui / emulation / browserstack / realmobile
+    private static final String deviceHost = System.getProperty("deviceHost", "ui");  // ui / emulation / browserstack / realmobile
 
     @BeforeAll
     public static void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.browser = getDeviceDriver(deviceHost);
+        //UIWebDriver.createDriver();
+        getDeviceDriver(deviceHost);
         Configuration.browserSize = null;
     }
 
@@ -45,14 +47,16 @@ public class TestBase {
         screenshotAs("Last screenshot");
         pageSourceText();
         PageSourceHtml();
+        closeWebDriver();
 
         switch (deviceHost) {
             case "browserstack":
                 browserstackVideo(sessionId);
+                break;
             case "ui":
-                browserConsoleLogs();
+              //  browserConsoleLogs();
                 SelenoidVideo(sessionId);
+                break;
         }
-        closeWebDriver();
     }
 }

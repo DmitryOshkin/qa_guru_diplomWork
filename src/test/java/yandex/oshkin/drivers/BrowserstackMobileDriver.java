@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.notNullValue;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    private static final String browserstackSessionId = uploadAPK();
+//    private static final String browserstackSessionId = uploadAPK();
 
     public static URL getBrowserstackUrl() {
         try {
@@ -28,17 +28,21 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         }
     }
 
-    @Nonnull
-    private static String uploadAPK() {
-        return given()
-                .multiPart("file", new File("src/test/resources/apk/citilink.apk"))
-                .when()
-                .post(Browserstack.config.browserstackUploadApkUrl())
-                .then()
-                .statusCode(200)
-                .body("app_url", is(notNullValue()))
-                .extract().path("app_url").toString();
-    }
+//    @Nonnull
+//    private static String uploadAPK() {
+//        return given()
+//                .auth().basic(Browserstack.config.browserstackUser(), Browserstack.config.browserstackKey())
+//                .multiPart("file", new File("src/test/resources/apk/citilink.apk"))
+//                .contentType("multipart/form-data;")
+//                .log().all()
+//                .when()
+//                .post(Browserstack.config.browserstackUploadApkUrl())
+//                .then()
+//                .log().all()
+//                .statusCode(200)
+//                .body("app_url", is(notNullValue()))
+//                .extract().path("app_url").toString();
+//    }
 
     @Nonnull
     @Override
@@ -48,7 +52,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("browserstack.appium_version", "1.22.0");
         mutableCapabilities.setCapability("browserstack.user", Browserstack.config.browserstackUser());
         mutableCapabilities.setCapability("browserstack.key", Browserstack.config.browserstackKey());
-        mutableCapabilities.setCapability("app", browserstackSessionId);
+        mutableCapabilities.setCapability("app", "bs://8108459429116b4c9b52390507433f9904b20135");
         mutableCapabilities.setCapability("device", Browserstack.config.browserstackDeviceName());
         mutableCapabilities.setCapability("os_version", Browserstack.config.browserstackDeviceVersion());
         mutableCapabilities.setCapability("project", "First Java Project");

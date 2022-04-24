@@ -1,5 +1,6 @@
 package yandex.oshkin.helpers;
 
+import com.codeborne.selenide.Configuration;
 import yandex.oshkin.drivers.BrowserstackMobileDriver;
 import yandex.oshkin.drivers.EmulatorMobileDriver;
 import yandex.oshkin.drivers.RealMobileDriver;
@@ -11,15 +12,20 @@ public class DeviceSelection {
         switch (deviceHost) {
             case "ui":
                 UIWebDriver.createDriver();
+                break;
             case "emulation":
-                return EmulatorMobileDriver.class.getName();
+                Configuration.browser = EmulatorMobileDriver.class.getName();
+                break;
             case "browserstack":
-                return BrowserstackMobileDriver.class.getName();
+                Configuration.browser = BrowserstackMobileDriver.class.getName();
+                break;
             case "realmobile":
-                return RealMobileDriver.class.getName();
+                Configuration.browser = RealMobileDriver.class.getName();
+                break;
             default:
                 throw new RuntimeException("Please select only " +
                         "ui / emulation / browserstack / realmobile /-DdeviceHost parameter");
         }
+        return deviceHost;
     }
 }

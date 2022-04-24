@@ -137,7 +137,7 @@ public class StepsMobile {
     @Step("Проверяем добавление товара в корзину")
     public StepsMobile checkAddedProductToOrder(Integer count) {
         $(AppiumBy.id("ru.citilink:id/ordering_graph"))
-                .shouldHave(attributeMatching("content-desc", "Корзина, " + count + " new notification.*"));
+                .shouldHave(attributeMatching("content-desc", "Корзина, " + count + ".*"));
         return this;
     }
 
@@ -197,7 +197,7 @@ public class StepsMobile {
     @Step("Проверяем добавление товара в избранное")
     public StepsMobile checkAddedProductToFavorite(Integer count) {
         $(AppiumBy.id("ru.citilink:id/favorite_products_graph"))
-                .shouldHave(attributeMatching("content-desc", "Избранное, " + count + " new notification.*"));
+                .shouldHave(attributeMatching("content-desc", "Избранное, " + count + ".*"));
         return this;
     }
 
