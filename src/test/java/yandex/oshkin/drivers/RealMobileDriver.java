@@ -12,12 +12,8 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 @ParametersAreNonnullByDefault
 public class RealMobileDriver implements WebDriverProvider {
@@ -48,17 +44,17 @@ public class RealMobileDriver implements WebDriverProvider {
     }
 
     private File downloadApk() {
-        File apk = new File("src/test/resources/apk/app-alpha-universal-release.apk");
-        if (!apk.exists()) {
-            String url = "https://github.com/wikimedia/apps-android-wikipedia/" +
-                    "releases/download/latest/app-alpha-universal-release.apk?raw=true";
-            try (InputStream in = new URL(url).openStream()) {
-                copyInputStreamToFile(in, apk);
-            }
-            catch (IOException e) {
-                throw new AssertionError("Failed to download apk", e);
-            }
-        }
+        File apk = new File("src/test/resources/apk/citilink.apk");
+//        if (!apk.exists()) {
+//            String url = "https://github.com/wikimedia/apps-android-wikipedia/" +
+//                    "releases/download/latest/app-alpha-universal-release.apk?raw=true";
+//            try (InputStream in = new URL(url).openStream()) {
+//                copyInputStreamToFile(in, apk);
+//            }
+//            catch (IOException e) {
+//                throw new AssertionError("Failed to download apk", e);
+//            }
+//        }
         return apk;
     }
 }

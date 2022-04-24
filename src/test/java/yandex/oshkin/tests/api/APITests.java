@@ -22,8 +22,8 @@ public class APITests extends TestBase {
     public void addToOrderProductTest() {
 
         commonStepsAPI
-                .addToOrder(product_2, 4)
-                .changeProductCountToOrder(product_2, 7);
+                .addToOrder(product_code_2, 4)
+                .changeProductCountToOrder(product_code_2, 7);
     }
 
     @Test
@@ -31,8 +31,8 @@ public class APITests extends TestBase {
     public void delOrderProductTest() {
 
         commonStepsAPI
-                .addToOrder(product_2, 4)
-                .delProductOrder(product_2);
+                .addToOrder(product_code_2, 4)
+                .delProductOrder(product_code_2);
     }
 
     @Test
@@ -40,9 +40,9 @@ public class APITests extends TestBase {
     public void clearOrderProductTest() {
 
         commonStepsAPI
-                .addToOrder(product_2, 4)
-                .addToOrder(product_1, 3)
-                .addToOrder(product_3, 8)
+                .addToOrder(product_code_2, 4)
+                .addToOrder(product_code_1, 3)
+                .addToOrder(product_code_3, 8)
                 .clearOrder();
     }
 
@@ -51,7 +51,7 @@ public class APITests extends TestBase {
     public void addToCompareTest() {
 
         commonStepsAPI
-                .addToCompare(product_1, 211);
+                .addToCompare(product_code_1, 211);
     }
 
     @Test
@@ -59,9 +59,9 @@ public class APITests extends TestBase {
     public void delProductCompareTest() {
 
         commonStepsAPI
-                .addToCompare(product_1, 211)
-                .addToCompare(product_2, 211)
-                .delProductCompare(product_1, 211);
+                .addToCompare(product_code_1, 211)
+                .addToCompare(product_code_2, 211)
+                .delProductCompare(product_code_1, 211);
     }
 
     @Test
@@ -69,9 +69,9 @@ public class APITests extends TestBase {
     public void cleanProductCompareTest() {
 
         commonStepsAPI
-                .addToCompare(product_1, 211)
-                .addToCompare(product_2, 211)
-                .addToCompare(product_3, 211)
+                .addToCompare(product_code_1, 211)
+                .addToCompare(product_code_2, 211)
+                .addToCompare(product_code_3, 211)
                 .cleanProductCompare(211);
     }
 }

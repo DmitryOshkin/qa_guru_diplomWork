@@ -12,8 +12,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 import yandex.oshkin.tests.TestBase;
 import yandex.oshkin.tests.commonsteps.CommonStepsUI;
 
-import static yandex.oshkin.tests.TestData.product_1;
-import static yandex.oshkin.tests.TestData.product_2;
+import static yandex.oshkin.tests.TestData.product_code_1;
+import static yandex.oshkin.tests.TestData.product_code_2;
 
 @Tag("UI")
 @Epic("UI")
@@ -26,15 +26,15 @@ public class UITests extends TestBase {
     @DisplayName("Поиск товара")
     void searchTest() {
         commonStepsUI
-                .searchProduct(product_1);
+                .searchProduct(product_code_1);
     }
 
     @Test
     @DisplayName("Добавление товара в корзину")
     void addProductOrderTest() {
         commonStepsUI
-                .searchProduct(product_2)
-                .addToOrder(product_2);
+                .searchProduct(product_code_2)
+                .addToOrder(product_code_2);
     }
 
     @ParameterizedTest(name = "Добавление товара {0} в список сравнения")
@@ -64,7 +64,7 @@ public class UITests extends TestBase {
     }
 
     @ParameterizedTest(name = "Полная очистка корзины")
-    @CsvFileSource(resources = "/data/dataCsv.csv")
+    @CsvFileSource(resources = "/data/uidata.csv")
     void cleanOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         commonStepsUI
                 .searchProduct(productCode_1)
@@ -79,7 +79,7 @@ public class UITests extends TestBase {
     }
 
     @ParameterizedTest(name = "Полная очистка списка сравнения")
-    @CsvFileSource(resources = "/data/dataCsv.csv")
+    @CsvFileSource(resources = "/data/uidata.csv")
     void cleanCompareTest(String productCode_1, String productCode_2, String productCode_3) {
         commonStepsUI
                 .searchProduct(productCode_1)

@@ -12,5 +12,4 @@ public interface BrowserstackConfig extends Config {
     String browserstackDeviceVersion();
     String browserstackDeviceName();
     String browserstackVideoAttachURL();
-
 }
