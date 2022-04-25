@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class ProductPage {
     SelenideElement
@@ -14,6 +15,7 @@ public class ProductPage {
 
     @Step("Проверяем результат поиска")
     public ProductPage checkResultSearch(String value) {
+        sleep(3000);
         $(".ProductCardLayout .ProductHeader__product-id")
                 .shouldHave(text("Код товара: " + value));
         return this;
@@ -33,6 +35,7 @@ public class ProductPage {
 
     @Step("Проверяем добавление товара в корзину")
     public ProductPage checkResultAddOrder(String value) {
+        sleep(3000);
         $(".UpsaleBasket__header-title")
                 .shouldHave(text("Товар добавлен в корзину"));
         $(".ProductCardForUpsale__vendor-code")

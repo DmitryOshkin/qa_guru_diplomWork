@@ -39,4 +39,13 @@ public class MainPage {
                 .shouldHave(text(value));
         return this;
     }
+
+    @Step("Закрывеем всплывашку с куками")
+    public MainPage closeCookies() {
+        if ($(".PersonalDataConfirm").isDisplayed()) {
+            $(".PersonalDataConfirm .PersonalDataConfirm__button")
+                    .click();
+        }
+        return this;
+    }
 }

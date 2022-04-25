@@ -12,6 +12,7 @@ public class CommonStepsUI extends TestBase {
     public CommonStepsUI searchProduct(String productCode) {
         mainPage
                 .openMainPage()
+                .closeCookies()
                 .search(productCode);
         productPage
                 .checkResultSearch(productCode);
