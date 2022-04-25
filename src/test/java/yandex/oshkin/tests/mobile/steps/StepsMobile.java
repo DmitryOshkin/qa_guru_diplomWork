@@ -1,12 +1,14 @@
 package yandex.oshkin.tests.mobile.steps;
 
+import com.codeborne.selenide.ElementsCollection;
 import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.attributeMatching;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 public class StepsMobile {
 
@@ -39,7 +41,7 @@ public class StepsMobile {
     }
 
     @Step("Удаляем все товары из корзины")
-    public StepsMobile deleteProductFromOrder() {
+    public StepsMobile deleteAllProductFromOrder() {
         tapToChangeButton();
         selectAllProductsOnOrder();
         delProductsFromOrder();
@@ -61,10 +63,10 @@ public class StepsMobile {
     }
 
     @Step("Удаляем товар из избранного")
-    public StepsMobile deleteProductFromFavorite() {
-        delProductFromFavorite();
+    public StepsMobile deleteProductFromFavorite(String productName) {
+        delProductFromFavorite(productName);
         openFavorite();
-        checkDelAllProductFromFavorite();
+        checkDelAllProductFromFavorite(productName);
         return this;
     }
 
@@ -156,10 +158,18 @@ public class StepsMobile {
         return this;
     }
 
+
     @Step("Проверяем наличие добавленного товара в корзине")
     public StepsMobile checkProductInOrder(String productName) {
-        $(AppiumBy.id("ru.citilink:id/textViewCartProductName"))
-                .shouldHave(attribute("text", productName));
+        int counter = 0;
+        ElementsCollection listProducts =
+                $$(AppiumBy.id("ru.citilink:id/textViewCartProductName"));
+        for (WebElement element : listProducts) {
+            if (element.getAttribute("text").equals(productName)){
+                counter++;
+            }
+        }
+        Assertions.assertEquals(1, counter, "Товар не найден");
         return this;
     }
 
@@ -217,22 +227,41 @@ public class StepsMobile {
 
     @Step("Проверяем наличие добавленного товара в избранное")
     public StepsMobile checkProductInFavorite(String productName) {
-        $(AppiumBy.id("ru.citilink:id/constraintLayoutItemProduct"))
-                .$(AppiumBy.id("ru.citilink:id/textViewTitle"))
-                .shouldHave(attribute("text", productName));
+        int counter = 0;
+        ElementsCollection listProducts =
+                $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
+        for (WebElement element : listProducts) {
+            if (element.getAttribute("text").equals(productName)){
+                counter++;
+            }
+        }
+        Assertions.assertEquals(1, counter, "Товар не найден");
         return this;
     }
 
     @Step("Убираем товар из избранного")
-    public StepsMobile delProductFromFavorite() {
-        $(AppiumBy.id("ru.citilink:id/imageViewFavorite")).click();
+    public StepsMobile delProductFromFavorite(String productName) {
+        ElementsCollection listProducts =
+                $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
+        for (WebElement element : listProducts) {
+            if (element.getAttribute("text").equals(productName)){
+                $(AppiumBy.id("ru.citilink:id/imageViewFavorite")).click();
+            }
+        }
         return this;
     }
 
-    @Step("Проверяем что в избранном нет товаров")
-    public StepsMobile checkDelAllProductFromFavorite() {
-        $(AppiumBy.id("ru.citilink:id/textEmptyTitle"))
-                .shouldHave(attribute("text", "В избранном пока пусто"));
+    @Step("Проверяем что в избранном нет товара")
+    public StepsMobile checkDelAllProductFromFavorite(String productName) {
+        int counter = 0;
+        ElementsCollection listProducts =
+        $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
+        for (WebElement element : listProducts) {
+            if (element.getAttribute("text").equals(productName)){
+                counter++;
+            }
+        }
+        Assertions.assertEquals(0, counter, "Товар не убран из избранного");
         return this;
     }
 }

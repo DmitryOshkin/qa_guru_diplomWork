@@ -1,6 +1,7 @@
 package yandex.oshkin.tests.commonsteps;
 
 import io.qameta.allure.Step;
+import yandex.oshkin.models.Basket.clearBasket.Basket;
 import yandex.oshkin.tests.TestBase;
 
 import java.util.Map;
@@ -9,11 +10,12 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static yandex.oshkin.spec.Specs.request;
 import static yandex.oshkin.spec.Specs.responseSpec200;
 
 public class CommonStepsAPI extends TestBase {
-
+    Basket basketClean = null;
     int changeAmount = 0;
     int basketCount = 0;
 
@@ -88,7 +90,7 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Очищаем корзину")
     public CommonStepsAPI clearOrder() {
-
+basketClean =
         given()
                 .spec(request)
                 .when()
@@ -96,8 +98,12 @@ public class CommonStepsAPI extends TestBase {
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
-                .body("storage.cart.list", is(empty()))
-                .body("storage.cart.basketCount", is(0));
+//                .body("storage.cart.list", is(empty()))
+//                .body("storage.cart.basketCount", is(0))
+                .extract().body().as(Basket.class);
+
+//        assertEquals("[]", basketClean.getStorage().getCart().getList());
+        assertEquals(0, basketClean.getStorage().getCart().getBasketCount());
         return this;
     }
 

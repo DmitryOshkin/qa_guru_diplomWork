@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.notNullValue;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-//    private static final String browserstackSessionId = uploadAPK();
+//    private static final String browserstackUploadSessionId = uploadAPK();
 
     public static URL getBrowserstackUrl() {
         try {
@@ -52,7 +52,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("browserstack.appium_version", "1.22.0");
         mutableCapabilities.setCapability("browserstack.user", Browserstack.config.browserstackUser());
         mutableCapabilities.setCapability("browserstack.key", Browserstack.config.browserstackKey());
-        mutableCapabilities.setCapability("app", "bs://8108459429116b4c9b52390507433f9904b20135");
+        mutableCapabilities.setCapability("app", Browserstack.config.browserstackSessionId());
         mutableCapabilities.setCapability("device", Browserstack.config.browserstackDeviceName());
         mutableCapabilities.setCapability("os_version", Browserstack.config.browserstackDeviceVersion());
         mutableCapabilities.setCapability("project", "First Java Project");

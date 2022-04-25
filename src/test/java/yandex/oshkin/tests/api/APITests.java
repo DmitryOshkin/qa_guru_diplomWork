@@ -18,7 +18,7 @@ public class APITests extends TestBase {
     public CommonStepsAPI commonStepsAPI = new CommonStepsAPI();
 
     @Test
-    @DisplayName("Добавление товара в корзину и изменение его количества через api")
+    @DisplayName("Добавление товара в корзину и изменение его количества")
     public void addToOrderProductTest() {
 
         commonStepsAPI

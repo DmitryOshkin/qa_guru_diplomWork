@@ -8,5 +8,7 @@ public class TestData extends TestBase {
             product_code_2 = "1442048",
             product_name_2 = "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
             product_code_3 = "1114499",
-            product_name_3 = "Чайник электрический Xiaomi Mi Electric Kettle, 1800Вт, белый";
+            product_name_3 = "Чайник электрический Xiaomi Mi Electric Kettle, 1800Вт, белый",
+            product_code_4 = "721647",
+            product_name_4 = "Чайник электрический Bosch TWK3A011, 2400Вт, белый";
 }

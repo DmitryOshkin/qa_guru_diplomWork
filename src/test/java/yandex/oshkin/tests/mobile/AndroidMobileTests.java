@@ -19,7 +19,7 @@ public class AndroidMobileTests extends TestBase {
     void searchAppTest() {
         stepMobile
                 .skipBanner()
-                .searchProduct(product_code_2, product_name_2);
+                .searchProduct(product_code_4, product_name_4);
     }
 
     @Test
@@ -36,13 +36,13 @@ public class AndroidMobileTests extends TestBase {
     void DeleteProductFromOrderTest() {
         stepMobile
                 .skipBanner()
-                .searchProduct(product_code_3, product_name_3)
-                .addProductToOrder(product_code_3, product_name_3)
                 .searchProduct(product_code_1, product_name_1)
                 .addProductToOrder(product_code_1, product_name_1)
                 .searchProduct(product_code_2, product_name_2)
                 .addProductToOrder(product_code_2, product_name_2)
-                .deleteProductFromOrder();
+                .searchProduct(product_code_4, product_name_4)
+                .addProductToOrder(product_code_4, product_name_4)
+                .deleteAllProductFromOrder();
     }
 
     @Test
@@ -61,6 +61,10 @@ public class AndroidMobileTests extends TestBase {
                 .skipBanner()
                 .searchProduct(product_code_1, product_name_1)
                 .addProductToFavoriteList(product_code_1, product_name_1)
-                .deleteProductFromFavorite();
+                .searchProduct(product_code_2, product_name_2)
+                .addProductToFavoriteList(product_code_2, product_name_2)
+                .searchProduct(product_code_4, product_name_4)
+                .addProductToFavoriteList(product_code_4, product_name_4)
+                .deleteProductFromFavorite(product_name_2);
     }
 }
