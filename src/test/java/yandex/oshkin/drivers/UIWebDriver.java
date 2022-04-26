@@ -21,7 +21,7 @@ public class UIWebDriver {
         String browserSize = System.getProperty("browserSize", Selenoid.config.browserSize());
         String url = format("https://%s:%s@%s", user, password, remoteUrl);
 
-        //Configuration.remote = url;
+        Configuration.remote = url;
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
         Configuration.browserSize = browserSize;
