@@ -1,11 +1,13 @@
 package yandex.oshkin.tests.commonsteps;
 
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 import yandex.oshkin.models.Basket.clearBasket.Basket;
 import yandex.oshkin.tests.TestBase;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -41,6 +43,7 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Добавляем товар в корзину")
     public CommonStepsAPI addToOrder(String productCode, int count) {
+        open("");
         basketCount = basketCount + count;
 
         given()

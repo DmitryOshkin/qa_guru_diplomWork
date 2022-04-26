@@ -9,7 +9,10 @@ public interface SelenoidConfig extends Config {
     String password();
     String remoteUrl();
     String videoAttachUrl();
+    @DefaultValue("chrome")
     String browser();
+    @DefaultValue("100.0")
     String browserVersion();
+    @DefaultValue("1024x980")
     String browserSize();
 }
