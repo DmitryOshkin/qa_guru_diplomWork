@@ -2,21 +2,18 @@ package yandex.oshkin.models.Basket.clearBasket;
 
 import io.qameta.allure.internal.shadowed.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Cart {
 
-    private ArrayList list;
+    private List<?> list;
     private Integer basketCount;
     private Integer basketCountProduct;
     private Integer basketCountServices;
-    private ArrayList removedList;
+    private List<?> removedList;
     private Integer orderAmountWithoutDiscount;
     private Integer orderAmount;
     private Integer accruedBonuses;

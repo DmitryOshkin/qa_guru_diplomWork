@@ -98,11 +98,9 @@ basketClean =
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
-//                .body("storage.cart.list", is(empty()))
-//                .body("storage.cart.basketCount", is(0))
                 .extract().body().as(Basket.class);
 
-//        assertEquals("[]", basketClean.getStorage().getCart().getList());
+        assertEquals(Boolean.TRUE, basketClean.getStorage().getCart().getList().isEmpty());
         assertEquals(0, basketClean.getStorage().getCart().getBasketCount());
         return this;
     }

@@ -38,7 +38,7 @@ public class TestBase {
 
     @BeforeEach
     public void startDriver() {
-        open();
+        open("");
     }
 
     @AfterEach
