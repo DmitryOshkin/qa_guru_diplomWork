@@ -8,13 +8,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import yandex.oshkin.config.browserstack.Browserstack;
 
 import javax.annotation.Nonnull;
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 

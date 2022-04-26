@@ -15,7 +15,7 @@ public class ProductPage {
 
     @Step("Проверяем результат поиска")
     public ProductPage checkResultSearch(String value) {
-        sleep(2000);
+        sleep(5000);
         $(".ProductCardLayout .ProductHeader__product-id")
                 .shouldHave(text("Код товара: " + value));
         return this;

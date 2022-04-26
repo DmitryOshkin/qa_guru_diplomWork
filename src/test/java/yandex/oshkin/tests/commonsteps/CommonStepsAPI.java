@@ -9,7 +9,8 @@ import java.util.Map;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static yandex.oshkin.spec.Specs.request;
 import static yandex.oshkin.spec.Specs.responseSpec200;
@@ -90,15 +91,15 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Очищаем корзину")
     public CommonStepsAPI clearOrder() {
-basketClean =
-        given()
-                .spec(request)
-                .when()
-                .get("basket/clear/")
-                .then()
-                .spec(responseSpec200)
-                .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
-                .extract().body().as(Basket.class);
+        basketClean =
+                given()
+                        .spec(request)
+                        .when()
+                        .get("basket/clear/")
+                        .then()
+                        .spec(responseSpec200)
+                        .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
+                        .extract().body().as(Basket.class);
 
         assertEquals(Boolean.TRUE, basketClean.getStorage().getCart().getList().isEmpty());
         assertEquals(0, basketClean.getStorage().getCart().getBasketCount());

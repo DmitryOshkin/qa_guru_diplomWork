@@ -6,7 +6,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import yandex.oshkin.drivers.UIWebDriver;
 import yandex.oshkin.pages.ComparePage;
 import yandex.oshkin.pages.MainPage;
 import yandex.oshkin.pages.OrderPage;
@@ -31,14 +30,16 @@ public class TestBase {
     @BeforeAll
     public static void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        //UIWebDriver.createDriver();
         getDeviceDriver(deviceHost);
         Configuration.browserSize = null;
     }
 
     @BeforeEach
     public void startDriver() {
-        open("");
+        if (deviceHost.equals("ui")) {
+            open("");
+        }
+        open();
     }
 
     @AfterEach
@@ -47,6 +48,7 @@ public class TestBase {
         screenshotAs("Last screenshot");
         pageSourceText();
         PageSourceHtml();
+        if (deviceHost.equals("ui")) browserConsoleLogs();
         closeWebDriver();
 
         switch (deviceHost) {
@@ -54,7 +56,6 @@ public class TestBase {
                 browserstackVideo(sessionId);
                 break;
             case "ui":
-              //  browserConsoleLogs();
                 SelenoidVideo(sessionId);
                 break;
         }
