@@ -43,7 +43,6 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Добавляем товар в корзину")
     public CommonStepsAPI addToOrder(String productCode, int count) {
-        open("");
         basketCount = basketCount + count;
 
         given()
