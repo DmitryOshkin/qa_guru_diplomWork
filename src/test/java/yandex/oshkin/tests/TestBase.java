@@ -31,15 +31,19 @@ public class TestBase {
     public static void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         getDeviceDriver(deviceHost);
-        Configuration.browserSize = null;
+        if (deviceHost.equals("ui")) {
+        } else {
+            Configuration.browserSize = null;
+        }
     }
 
     @BeforeEach
     public void startDriver() {
         if (deviceHost.equals("ui")) {
             open("");
+        } else {
+            open();
         }
-        open();
     }
 
     @AfterEach

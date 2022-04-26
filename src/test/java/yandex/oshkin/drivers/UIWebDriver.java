@@ -37,6 +37,7 @@ public class UIWebDriver {
 
         Attach.attachAsText("Browser: ", browser);
         Attach.attachAsText("Version: ", browserVersion);
+        Attach.attachAsText("BrowserSize: ", browserSize);
         Attach.attachAsText("Remote Url: ", remoteUrl);
     }
 }
