@@ -161,7 +161,7 @@ ${TASK}
 
 ### Пример запуска теста в Selenoid
 <p align="center">
-    <img src="images/videoUI.gif" alt="defects" width="900">
+    <img src="images/gif/videoUI.gif" alt="defects" width="900">
 </p>
 
 ### Уведомления в Telegram
