@@ -13,7 +13,10 @@ def restAssured = "5.0.1",
     selenideVersion = "6.4.0",
     allureVersion = "2.17.3",
     appiumVersion = "8.0.0",
-    ownerVersion = "1.0.12"
+    ownerVersion = "1.0.12",
+    assertjVersion = "3.22.0",
+    jacksonVersion = "2.13.2.2",
+    commonsIOVersion = "2.11.0"
 
 allure {
     report {
@@ -68,19 +71,16 @@ dependencies {
     //owner
     testImplementation(
             "org.aeonbits.owner:owner:$ownerVersion",
-            "commons-io:commons-io:2.11.0")
+            "commons-io:commons-io:$commonsIOVersion")
 
     //appium
     testImplementation("io.appium:java-client:$appiumVersion")
 
-    //random Faker
-    testImplementation("com.github.javafaker:javafaker:1.0.2")
-
     //jackson
-    testImplementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
+    testImplementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
 
     //assertj
-    testImplementation("org.assertj:assertj-core:3.22.0")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
 }
 
 tasks.withType(Test) {
