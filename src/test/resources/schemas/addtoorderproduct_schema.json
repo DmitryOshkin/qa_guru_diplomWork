@@ -1,0 +1,1380 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "storage": {
+        "compare": null,
+        "wishlist": null,
+        "cart": {
+          "list": {
+            "1442048": {
+              "id": "1442048",
+              "amount": 4,
+              "cost": 25996,
+              "order": true,
+              "subItems": [],
+              "price": 6499,
+              "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+              "actionType": 0,
+              "marketingStatus": "",
+              "categoryName": "",
+              "categoryId": 211,
+              "shortName": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+              "brandName": "",
+              "isConf": "",
+              "infosList": [],
+              "maxCount": 26,
+              "isMarked": false
+            }
+          },
+          "basketCount": 4,
+          "basketCountProduct": 4,
+          "basketCountServices": 0,
+          "removedList": [],
+          "orderAmountWithoutDiscount": 25996,
+          "orderAmount": 25996,
+          "accruedBonuses": 0,
+          "amountDiscount": {
+            "serviceDiscount": 0,
+            "marketingBonus": 0,
+            "couponDiscount": 0,
+            "actionDiscount": 0,
+            "maxBonus": 0
+          },
+          "bonus": {
+            "bonus": 0,
+            "maxBonus": 0,
+            "minBonus": 0,
+            "useBonus": 0,
+            "isCanApplyBonus": false
+          },
+          "coupon": "",
+          "promoCode": {
+            "promoCode": "",
+            "promoCodeNumber": "",
+            "actionNumber": "",
+            "isVerified": ""
+          },
+          "selfDeliveryDate": 0,
+          "shipmentTime": "",
+          "shipmentDate": "",
+          "deliveryType": 0,
+          "deliveryCost": {
+            "deliveryTotalCost": 0,
+            "deliveryTotalCostWithDiscount": 0
+          },
+          "hasMarkedProducts": false
+        },
+        "authorized": []
+      },
+      "drivebackItems": {
+        "cart": {
+          "1442048": {
+            "id": "1442048",
+            "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+            "currency": "RUB",
+            "unitPrice": 7499,
+            "unitSalePrice": 6499,
+            "category": [
+              "Бытовая техника для дома и кухни",
+              "Мелкая бытовая техника",
+              "Чайники электрические",
+              "POLARIS"
+            ],
+            "url": "https://www.citilink.ru/catalog/large_and_small_appliances/small_appliances/kettles/1442048/",
+            "imageUrl": "https://items.s1.citilink.ru/1442048_v01_b.jpg",
+            "thumbnailUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+            "description": "",
+            "manufacturer": "POLARIS",
+            "skuCode": "1442048",
+            "stock": null,
+            "bonusAmount": 0,
+            "creditMonthlyPrice": 0,
+            "minAuctionPrice": 0,
+            "reviews": [],
+            "rating": 5,
+            "refurbishedVersion": null,
+            "pickupInfo": null,
+            "categoryId": 211
+          }
+        }
+      },
+      "ret": 1
+    }
+  ],
+  "required": [
+    "storage",
+    "drivebackItems",
+    "ret"
+  ],
+  "properties": {
+    "storage": {
+      "$id": "#/properties/storage",
+      "type": "object",
+      "title": "The storage schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "compare": null,
+          "wishlist": null,
+          "cart": {
+            "list": {
+              "1442048": {
+                "id": "1442048",
+                "amount": 4,
+                "cost": 25996,
+                "order": true,
+                "subItems": [],
+                "price": 6499,
+                "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                "actionType": 0,
+                "marketingStatus": "",
+                "categoryName": "",
+                "categoryId": 211,
+                "shortName": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                "brandName": "",
+                "isConf": "",
+                "infosList": [],
+                "maxCount": 26,
+                "isMarked": false
+              }
+            },
+            "basketCount": 4,
+            "basketCountProduct": 4,
+            "basketCountServices": 0,
+            "removedList": [],
+            "orderAmountWithoutDiscount": 25996,
+            "orderAmount": 25996,
+            "accruedBonuses": 0,
+            "amountDiscount": {
+              "serviceDiscount": 0,
+              "marketingBonus": 0,
+              "couponDiscount": 0,
+              "actionDiscount": 0,
+              "maxBonus": 0
+            },
+            "bonus": {
+              "bonus": 0,
+              "maxBonus": 0,
+              "minBonus": 0,
+              "useBonus": 0,
+              "isCanApplyBonus": false
+            },
+            "coupon": "",
+            "promoCode": {
+              "promoCode": "",
+              "promoCodeNumber": "",
+              "actionNumber": "",
+              "isVerified": ""
+            },
+            "selfDeliveryDate": 0,
+            "shipmentTime": "",
+            "shipmentDate": "",
+            "deliveryType": 0,
+            "deliveryCost": {
+              "deliveryTotalCost": 0,
+              "deliveryTotalCostWithDiscount": 0
+            },
+            "hasMarkedProducts": false
+          },
+          "authorized": []
+        }
+      ],
+      "required": [
+        "compare",
+        "wishlist",
+        "cart",
+        "authorized"
+      ],
+      "properties": {
+        "compare": {
+          "$id": "#/properties/storage/properties/compare",
+          "type": "null",
+          "title": "The compare schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "wishlist": {
+          "$id": "#/properties/storage/properties/wishlist",
+          "type": "null",
+          "title": "The wishlist schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "cart": {
+          "$id": "#/properties/storage/properties/cart",
+          "type": "object",
+          "title": "The cart schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "list": {
+                "1442048": {
+                  "id": "1442048",
+                  "amount": 4,
+                  "cost": 25996,
+                  "order": true,
+                  "subItems": [],
+                  "price": 6499,
+                  "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                  "actionType": 0,
+                  "marketingStatus": "",
+                  "categoryName": "",
+                  "categoryId": 211,
+                  "shortName": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                  "brandName": "",
+                  "isConf": "",
+                  "infosList": [],
+                  "maxCount": 26,
+                  "isMarked": false
+                }
+              },
+              "basketCount": 4,
+              "basketCountProduct": 4,
+              "basketCountServices": 0,
+              "removedList": [],
+              "orderAmountWithoutDiscount": 25996,
+              "orderAmount": 25996,
+              "accruedBonuses": 0,
+              "amountDiscount": {
+                "serviceDiscount": 0,
+                "marketingBonus": 0,
+                "couponDiscount": 0,
+                "actionDiscount": 0,
+                "maxBonus": 0
+              },
+              "bonus": {
+                "bonus": 0,
+                "maxBonus": 0,
+                "minBonus": 0,
+                "useBonus": 0,
+                "isCanApplyBonus": false
+              },
+              "coupon": "",
+              "promoCode": {
+                "promoCode": "",
+                "promoCodeNumber": "",
+                "actionNumber": "",
+                "isVerified": ""
+              },
+              "selfDeliveryDate": 0,
+              "shipmentTime": "",
+              "shipmentDate": "",
+              "deliveryType": 0,
+              "deliveryCost": {
+                "deliveryTotalCost": 0,
+                "deliveryTotalCostWithDiscount": 0
+              },
+              "hasMarkedProducts": false
+            }
+          ],
+          "required": [
+            "list",
+            "basketCount",
+            "basketCountProduct",
+            "basketCountServices",
+            "removedList",
+            "orderAmountWithoutDiscount",
+            "orderAmount",
+            "accruedBonuses",
+            "amountDiscount",
+            "bonus",
+            "coupon",
+            "promoCode",
+            "selfDeliveryDate",
+            "shipmentTime",
+            "shipmentDate",
+            "deliveryType",
+            "deliveryCost",
+            "hasMarkedProducts"
+          ],
+          "properties": {
+            "list": {
+              "$id": "#/properties/storage/properties/cart/properties/list",
+              "type": "object",
+              "title": "The list schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "1442048": {
+                    "id": "1442048",
+                    "amount": 4,
+                    "cost": 25996,
+                    "order": true,
+                    "subItems": [],
+                    "price": 6499,
+                    "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                    "actionType": 0,
+                    "marketingStatus": "",
+                    "categoryName": "",
+                    "categoryId": 211,
+                    "shortName": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                    "brandName": "",
+                    "isConf": "",
+                    "infosList": [],
+                    "maxCount": 26,
+                    "isMarked": false
+                  }
+                }
+              ],
+              "required": [
+                "1442048"
+              ],
+              "properties": {
+                "1442048": {
+                  "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048",
+                  "type": "object",
+                  "title": "The 1442048 schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                    {
+                      "id": "1442048",
+                      "amount": 4,
+                      "cost": 25996,
+                      "order": true,
+                      "subItems": [],
+                      "price": 6499,
+                      "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                      "actionType": 0,
+                      "marketingStatus": "",
+                      "categoryName": "",
+                      "categoryId": 211,
+                      "shortName": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                      "brandName": "",
+                      "isConf": "",
+                      "infosList": [],
+                      "maxCount": 26,
+                      "isMarked": false
+                    }
+                  ],
+                  "required": [
+                    "id",
+                    "amount",
+                    "cost",
+                    "order",
+                    "subItems",
+                    "price",
+                    "name",
+                    "actionType",
+                    "marketingStatus",
+                    "categoryName",
+                    "categoryId",
+                    "shortName",
+                    "brandName",
+                    "isConf",
+                    "infosList",
+                    "maxCount",
+                    "isMarked"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/id",
+                      "type": "string",
+                      "title": "The id schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "1442048"
+                      ]
+                    },
+                    "amount": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/amount",
+                      "type": "integer",
+                      "title": "The amount schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        4
+                      ]
+                    },
+                    "cost": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/cost",
+                      "type": "integer",
+                      "title": "The cost schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        25996
+                      ]
+                    },
+                    "order": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/order",
+                      "type": "boolean",
+                      "title": "The order schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": false,
+                      "examples": [
+                        true
+                      ]
+                    },
+                    "subItems": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/subItems",
+                      "type": "array",
+                      "title": "The subItems schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": [],
+                      "examples": [
+                        []
+                      ],
+                      "additionalItems": true,
+                      "items": {
+                        "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/subItems/items"
+                      }
+                    },
+                    "price": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/price",
+                      "type": "integer",
+                      "title": "The price schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        6499
+                      ]
+                    },
+                    "name": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/name",
+                      "type": "string",
+                      "title": "The name schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный"
+                      ]
+                    },
+                    "actionType": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/actionType",
+                      "type": "integer",
+                      "title": "The actionType schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        0
+                      ]
+                    },
+                    "marketingStatus": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/marketingStatus",
+                      "type": "string",
+                      "title": "The marketingStatus schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "categoryName": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/categoryName",
+                      "type": "string",
+                      "title": "The categoryName schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "categoryId": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/categoryId",
+                      "type": "integer",
+                      "title": "The categoryId schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        211
+                      ]
+                    },
+                    "shortName": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/shortName",
+                      "type": "string",
+                      "title": "The shortName schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный"
+                      ]
+                    },
+                    "brandName": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/brandName",
+                      "type": "string",
+                      "title": "The brandName schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "isConf": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/isConf",
+                      "type": "string",
+                      "title": "The isConf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ]
+                    },
+                    "infosList": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/infosList",
+                      "type": "array",
+                      "title": "The infosList schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": [],
+                      "examples": [
+                        []
+                      ],
+                      "additionalItems": true,
+                      "items": {
+                        "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/infosList/items"
+                      }
+                    },
+                    "maxCount": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/maxCount",
+                      "type": "integer",
+                      "title": "The maxCount schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        26
+                      ]
+                    },
+                    "isMarked": {
+                      "$id": "#/properties/storage/properties/cart/properties/list/properties/1442048/properties/isMarked",
+                      "type": "boolean",
+                      "title": "The isMarked schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": true
+            },
+            "basketCount": {
+              "$id": "#/properties/storage/properties/cart/properties/basketCount",
+              "type": "integer",
+              "title": "The basketCount schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                4
+              ]
+            },
+            "basketCountProduct": {
+              "$id": "#/properties/storage/properties/cart/properties/basketCountProduct",
+              "type": "integer",
+              "title": "The basketCountProduct schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                4
+              ]
+            },
+            "basketCountServices": {
+              "$id": "#/properties/storage/properties/cart/properties/basketCountServices",
+              "type": "integer",
+              "title": "The basketCountServices schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "removedList": {
+              "$id": "#/properties/storage/properties/cart/properties/removedList",
+              "type": "array",
+              "title": "The removedList schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": [],
+              "examples": [
+                []
+              ],
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/storage/properties/cart/properties/removedList/items"
+              }
+            },
+            "orderAmountWithoutDiscount": {
+              "$id": "#/properties/storage/properties/cart/properties/orderAmountWithoutDiscount",
+              "type": "integer",
+              "title": "The orderAmountWithoutDiscount schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                25996
+              ]
+            },
+            "orderAmount": {
+              "$id": "#/properties/storage/properties/cart/properties/orderAmount",
+              "type": "integer",
+              "title": "The orderAmount schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                25996
+              ]
+            },
+            "accruedBonuses": {
+              "$id": "#/properties/storage/properties/cart/properties/accruedBonuses",
+              "type": "integer",
+              "title": "The accruedBonuses schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "amountDiscount": {
+              "$id": "#/properties/storage/properties/cart/properties/amountDiscount",
+              "type": "object",
+              "title": "The amountDiscount schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "serviceDiscount": 0,
+                  "marketingBonus": 0,
+                  "couponDiscount": 0,
+                  "actionDiscount": 0,
+                  "maxBonus": 0
+                }
+              ],
+              "required": [
+                "serviceDiscount",
+                "marketingBonus",
+                "couponDiscount",
+                "actionDiscount",
+                "maxBonus"
+              ],
+              "properties": {
+                "serviceDiscount": {
+                  "$id": "#/properties/storage/properties/cart/properties/amountDiscount/properties/serviceDiscount",
+                  "type": "integer",
+                  "title": "The serviceDiscount schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "marketingBonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/amountDiscount/properties/marketingBonus",
+                  "type": "integer",
+                  "title": "The marketingBonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "couponDiscount": {
+                  "$id": "#/properties/storage/properties/cart/properties/amountDiscount/properties/couponDiscount",
+                  "type": "integer",
+                  "title": "The couponDiscount schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "actionDiscount": {
+                  "$id": "#/properties/storage/properties/cart/properties/amountDiscount/properties/actionDiscount",
+                  "type": "integer",
+                  "title": "The actionDiscount schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "maxBonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/amountDiscount/properties/maxBonus",
+                  "type": "integer",
+                  "title": "The maxBonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                }
+              },
+              "additionalProperties": true
+            },
+            "bonus": {
+              "$id": "#/properties/storage/properties/cart/properties/bonus",
+              "type": "object",
+              "title": "The bonus schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "bonus": 0,
+                  "maxBonus": 0,
+                  "minBonus": 0,
+                  "useBonus": 0,
+                  "isCanApplyBonus": false
+                }
+              ],
+              "required": [
+                "bonus",
+                "maxBonus",
+                "minBonus",
+                "useBonus",
+                "isCanApplyBonus"
+              ],
+              "properties": {
+                "bonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/bonus/properties/bonus",
+                  "type": "integer",
+                  "title": "The bonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "maxBonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/bonus/properties/maxBonus",
+                  "type": "integer",
+                  "title": "The maxBonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "minBonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/bonus/properties/minBonus",
+                  "type": "integer",
+                  "title": "The minBonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "useBonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/bonus/properties/useBonus",
+                  "type": "integer",
+                  "title": "The useBonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "isCanApplyBonus": {
+                  "$id": "#/properties/storage/properties/cart/properties/bonus/properties/isCanApplyBonus",
+                  "type": "boolean",
+                  "title": "The isCanApplyBonus schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": false,
+                  "examples": [
+                    false
+                  ]
+                }
+              },
+              "additionalProperties": true
+            },
+            "coupon": {
+              "$id": "#/properties/storage/properties/cart/properties/coupon",
+              "type": "string",
+              "title": "The coupon schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                ""
+              ]
+            },
+            "promoCode": {
+              "$id": "#/properties/storage/properties/cart/properties/promoCode",
+              "type": "object",
+              "title": "The promoCode schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "promoCode": "",
+                  "promoCodeNumber": "",
+                  "actionNumber": "",
+                  "isVerified": ""
+                }
+              ],
+              "required": [
+                "promoCode",
+                "promoCodeNumber",
+                "actionNumber",
+                "isVerified"
+              ],
+              "properties": {
+                "promoCode": {
+                  "$id": "#/properties/storage/properties/cart/properties/promoCode/properties/promoCode",
+                  "type": "string",
+                  "title": "The promoCode schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                },
+                "promoCodeNumber": {
+                  "$id": "#/properties/storage/properties/cart/properties/promoCode/properties/promoCodeNumber",
+                  "type": "string",
+                  "title": "The promoCodeNumber schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                },
+                "actionNumber": {
+                  "$id": "#/properties/storage/properties/cart/properties/promoCode/properties/actionNumber",
+                  "type": "string",
+                  "title": "The actionNumber schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                },
+                "isVerified": {
+                  "$id": "#/properties/storage/properties/cart/properties/promoCode/properties/isVerified",
+                  "type": "string",
+                  "title": "The isVerified schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                }
+              },
+              "additionalProperties": true
+            },
+            "selfDeliveryDate": {
+              "$id": "#/properties/storage/properties/cart/properties/selfDeliveryDate",
+              "type": "integer",
+              "title": "The selfDeliveryDate schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "shipmentTime": {
+              "$id": "#/properties/storage/properties/cart/properties/shipmentTime",
+              "type": "string",
+              "title": "The shipmentTime schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                ""
+              ]
+            },
+            "shipmentDate": {
+              "$id": "#/properties/storage/properties/cart/properties/shipmentDate",
+              "type": "string",
+              "title": "The shipmentDate schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                ""
+              ]
+            },
+            "deliveryType": {
+              "$id": "#/properties/storage/properties/cart/properties/deliveryType",
+              "type": "integer",
+              "title": "The deliveryType schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "deliveryCost": {
+              "$id": "#/properties/storage/properties/cart/properties/deliveryCost",
+              "type": "object",
+              "title": "The deliveryCost schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "deliveryTotalCost": 0,
+                  "deliveryTotalCostWithDiscount": 0
+                }
+              ],
+              "required": [
+                "deliveryTotalCost",
+                "deliveryTotalCostWithDiscount"
+              ],
+              "properties": {
+                "deliveryTotalCost": {
+                  "$id": "#/properties/storage/properties/cart/properties/deliveryCost/properties/deliveryTotalCost",
+                  "type": "integer",
+                  "title": "The deliveryTotalCost schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "deliveryTotalCostWithDiscount": {
+                  "$id": "#/properties/storage/properties/cart/properties/deliveryCost/properties/deliveryTotalCostWithDiscount",
+                  "type": "integer",
+                  "title": "The deliveryTotalCostWithDiscount schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                }
+              },
+              "additionalProperties": true
+            },
+            "hasMarkedProducts": {
+              "$id": "#/properties/storage/properties/cart/properties/hasMarkedProducts",
+              "type": "boolean",
+              "title": "The hasMarkedProducts schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "authorized": {
+          "$id": "#/properties/storage/properties/authorized",
+          "type": "array",
+          "title": "The authorized schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            []
+          ],
+          "additionalItems": true,
+          "items": {
+            "$id": "#/properties/storage/properties/authorized/items"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "drivebackItems": {
+      "$id": "#/properties/drivebackItems",
+      "type": "object",
+      "title": "The drivebackItems schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "cart": {
+            "1442048": {
+              "id": "1442048",
+              "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+              "currency": "RUB",
+              "unitPrice": 7499,
+              "unitSalePrice": 6499,
+              "category": [
+                "Бытовая техника для дома и кухни",
+                "Мелкая бытовая техника",
+                "Чайники электрические",
+                "POLARIS"
+              ],
+              "url": "https://www.citilink.ru/catalog/large_and_small_appliances/small_appliances/kettles/1442048/",
+              "imageUrl": "https://items.s1.citilink.ru/1442048_v01_b.jpg",
+              "thumbnailUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+              "description": "",
+              "manufacturer": "POLARIS",
+              "skuCode": "1442048",
+              "stock": null,
+              "bonusAmount": 0,
+              "creditMonthlyPrice": 0,
+              "minAuctionPrice": 0,
+              "reviews": [],
+              "rating": 5,
+              "refurbishedVersion": null,
+              "pickupInfo": null,
+              "categoryId": 211
+            }
+          }
+        }
+      ],
+      "required": [
+        "cart"
+      ],
+      "properties": {
+        "cart": {
+          "$id": "#/properties/drivebackItems/properties/cart",
+          "type": "object",
+          "title": "The cart schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "1442048": {
+                "id": "1442048",
+                "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                "currency": "RUB",
+                "unitPrice": 7499,
+                "unitSalePrice": 6499,
+                "category": [
+                  "Бытовая техника для дома и кухни",
+                  "Мелкая бытовая техника",
+                  "Чайники электрические",
+                  "POLARIS"
+                ],
+                "url": "https://www.citilink.ru/catalog/large_and_small_appliances/small_appliances/kettles/1442048/",
+                "imageUrl": "https://items.s1.citilink.ru/1442048_v01_b.jpg",
+                "thumbnailUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                "description": "",
+                "manufacturer": "POLARIS",
+                "skuCode": "1442048",
+                "stock": null,
+                "bonusAmount": 0,
+                "creditMonthlyPrice": 0,
+                "minAuctionPrice": 0,
+                "reviews": [],
+                "rating": 5,
+                "refurbishedVersion": null,
+                "pickupInfo": null,
+                "categoryId": 211
+              }
+            }
+          ],
+          "required": [
+            "1442048"
+          ],
+          "properties": {
+            "1442048": {
+              "$id": "#/properties/drivebackItems/properties/cart/properties/1442048",
+              "type": "object",
+              "title": "The 1442048 schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "id": "1442048",
+                  "name": "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный",
+                  "currency": "RUB",
+                  "unitPrice": 7499,
+                  "unitSalePrice": 6499,
+                  "category": [
+                    "Бытовая техника для дома и кухни",
+                    "Мелкая бытовая техника",
+                    "Чайники электрические",
+                    "POLARIS"
+                  ],
+                  "url": "https://www.citilink.ru/catalog/large_and_small_appliances/small_appliances/kettles/1442048/",
+                  "imageUrl": "https://items.s1.citilink.ru/1442048_v01_b.jpg",
+                  "thumbnailUrl": "https://items.s1.citilink.ru/1442048_v01_s.jpg",
+                  "description": "",
+                  "manufacturer": "POLARIS",
+                  "skuCode": "1442048",
+                  "stock": null,
+                  "bonusAmount": 0,
+                  "creditMonthlyPrice": 0,
+                  "minAuctionPrice": 0,
+                  "reviews": [],
+                  "rating": 5,
+                  "refurbishedVersion": null,
+                  "pickupInfo": null,
+                  "categoryId": 211
+                }
+              ],
+              "required": [
+                "id",
+                "name",
+                "currency",
+                "unitPrice",
+                "unitSalePrice",
+                "category",
+                "url",
+                "imageUrl",
+                "thumbnailUrl",
+                "description",
+                "manufacturer",
+                "skuCode",
+                "stock",
+                "bonusAmount",
+                "creditMonthlyPrice",
+                "minAuctionPrice",
+                "reviews",
+                "rating",
+                "refurbishedVersion",
+                "pickupInfo",
+                "categoryId"
+              ],
+              "properties": {
+                "id": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/id",
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "1442048"
+                  ]
+                },
+                "name": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/name",
+                  "type": "string",
+                  "title": "The name schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "Чайник электрический Polaris PWK 1715 CGL, 2200Вт, черный"
+                  ]
+                },
+                "currency": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/currency",
+                  "type": "string",
+                  "title": "The currency schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "RUB"
+                  ]
+                },
+                "unitPrice": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/unitPrice",
+                  "type": "integer",
+                  "title": "The unitPrice schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    7499
+                  ]
+                },
+                "unitSalePrice": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/unitSalePrice",
+                  "type": "integer",
+                  "title": "The unitSalePrice schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    6499
+                  ]
+                },
+                "category": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/category",
+                  "type": "array",
+                  "title": "The category schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": [],
+                  "examples": [
+                    [
+                      "Бытовая техника для дома и кухни",
+                      "Мелкая бытовая техника"
+                    ]
+                  ],
+                  "additionalItems": true,
+                  "items": {
+                    "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/category/items",
+                    "anyOf": [
+                      {
+                        "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/category/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                          "Бытовая техника для дома и кухни",
+                          "Мелкая бытовая техника"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "url": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/url",
+                  "type": "string",
+                  "title": "The url schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "https://www.citilink.ru/catalog/large_and_small_appliances/small_appliances/kettles/1442048/"
+                  ]
+                },
+                "imageUrl": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/imageUrl",
+                  "type": "string",
+                  "title": "The imageUrl schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "https://items.s1.citilink.ru/1442048_v01_b.jpg"
+                  ]
+                },
+                "thumbnailUrl": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/thumbnailUrl",
+                  "type": "string",
+                  "title": "The thumbnailUrl schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "https://items.s1.citilink.ru/1442048_v01_s.jpg"
+                  ]
+                },
+                "description": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/description",
+                  "type": "string",
+                  "title": "The description schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    ""
+                  ]
+                },
+                "manufacturer": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/manufacturer",
+                  "type": "string",
+                  "title": "The manufacturer schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "POLARIS"
+                  ]
+                },
+                "skuCode": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/skuCode",
+                  "type": "string",
+                  "title": "The skuCode schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "1442048"
+                  ]
+                },
+                "stock": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/stock",
+                  "type": "null",
+                  "title": "The stock schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "bonusAmount": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/bonusAmount",
+                  "type": "integer",
+                  "title": "The bonusAmount schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "creditMonthlyPrice": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/creditMonthlyPrice",
+                  "type": "integer",
+                  "title": "The creditMonthlyPrice schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "minAuctionPrice": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/minAuctionPrice",
+                  "type": "integer",
+                  "title": "The minAuctionPrice schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "reviews": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/reviews",
+                  "type": "array",
+                  "title": "The reviews schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": [],
+                  "examples": [
+                    []
+                  ],
+                  "additionalItems": true,
+                  "items": {
+                    "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/reviews/items"
+                  }
+                },
+                "rating": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/rating",
+                  "type": "integer",
+                  "title": "The rating schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    5
+                  ]
+                },
+                "refurbishedVersion": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/refurbishedVersion",
+                  "type": "null",
+                  "title": "The refurbishedVersion schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "pickupInfo": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/pickupInfo",
+                  "type": "null",
+                  "title": "The pickupInfo schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": null,
+                  "examples": [
+                    null
+                  ]
+                },
+                "categoryId": {
+                  "$id": "#/properties/drivebackItems/properties/cart/properties/1442048/properties/categoryId",
+                  "type": "integer",
+                  "title": "The categoryId schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    211
+                  ]
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "ret": {
+      "$id": "#/properties/ret",
+      "type": "integer",
+      "title": "The ret schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    }
+  },
+  "additionalProperties": true
+}
