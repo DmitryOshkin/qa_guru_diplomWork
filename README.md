@@ -1,4 +1,4 @@
-# Проект по автоматизации тестов для магазина citilink
+# Проект по автоматизации тестирования для магазина citilink
 <a target="_blank" href="https://www.citilink.ru/">Citilink</a>
 
 <p align="center">
@@ -112,9 +112,6 @@ ${TASK}
 </p>
 
 ### Графики
-На данной странице представляется стандартное распределение выполнявшихся тестов по тестовым наборам или классам, в
-которых находятся тестовые методы.
-
 <p align="center">
   <img src="images/screens/Allure_Report2.png" alt="Allure Report" width="650">
 </p>
