@@ -37,6 +37,7 @@ public class UITests extends TestBase {
                 .checkResultSearch(product_code_2);
         productPage
                 .addToOrder(product_code_2);
+        countOrder++;
         mainPage
                 .checkOrderCount(String.valueOf(countOrder));
     }
@@ -49,7 +50,7 @@ public class UITests extends TestBase {
         mainPage
                 .searchProduct(productCode);
         productPage
-                .checkResultSearch(product_code_2);
+                .checkResultSearch(productCode);
         productPage
                 .addProductCompare();
         countCompare++;

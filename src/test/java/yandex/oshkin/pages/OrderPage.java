@@ -16,8 +16,6 @@ public class OrderPage {
     @Step("Открываем страницу корзины")
     public OrderPage openOrderPage() {
         open("/order/");
-//        $(".Basket__title__text")
-//                .shouldHave(text("Корзина"));
         return this;
     }
     @Step("Проверяем что открыта страница корзины")
@@ -36,8 +34,6 @@ public class OrderPage {
     @Step("Очищаем корзину целиком")
     public OrderPage cleanOrder() {
         cleanOrderButton.click();
-//        $(".Basket__basket-empty-title")
-//                .shouldHave(text("В корзине нет товаров"));
         return this;
     }
 
