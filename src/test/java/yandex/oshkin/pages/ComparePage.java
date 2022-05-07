@@ -14,6 +14,12 @@ public class ComparePage {
     @Step("Открываем страницу сравнения")
     public ComparePage openComparePage() {
         open("compare/");
+//        $(".ComparePage__heading")
+//                .shouldHave(text("Сравнение товаров"));
+        return this;
+    }
+    @Step("Проверяем открытие страницы сравнения")
+    public ComparePage checkOpenComparePage() {
         $(".ComparePage__heading")
                 .shouldHave(text("Сравнение товаров"));
         return this;
@@ -22,6 +28,12 @@ public class ComparePage {
     @Step("Очищаем список сравнения целиком")
     public ComparePage cleanCompare() {
         cleanCompareButton.click();
+//        $(".Compare__empty-products")
+//                .shouldHave(text("Нет товаров для сравнения"));
+        return this;
+    }
+    @Step("Проверяем что список сравнения пуст")
+    public ComparePage checkCleanCompare() {
         $(".Compare__empty-products")
                 .shouldHave(text("Нет товаров для сравнения"));
         return this;

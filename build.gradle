@@ -107,18 +107,18 @@ tasks.withType(Test) {
 
 task ui_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "UI"
+        includeTags "ui"
     }
 }
 
 task api_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "API"
+        includeTags "api"
     }
 }
 
 task mobile_android_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "Mobile"
+        includeTags "mobile"
     }
 }

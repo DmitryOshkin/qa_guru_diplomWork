@@ -23,8 +23,8 @@ public class DeviceSelection {
                 Configuration.browser = RealMobileDriver.class.getName();
                 break;
             default:
-                throw new RuntimeException("Please select only " +
-                        "ui / emulation / browserstack / realmobile /-DdeviceHost parameter");
+                throw new RuntimeException("Please select " +
+                        "-DdeviceHost parameter / ui / emulation / browserstack / realmobile");
         }
         return deviceHost;
     }

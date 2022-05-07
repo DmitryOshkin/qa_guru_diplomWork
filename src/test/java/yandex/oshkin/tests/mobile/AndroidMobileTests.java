@@ -1,6 +1,5 @@
 package yandex.oshkin.tests.mobile;
 
-import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -9,8 +8,7 @@ import yandex.oshkin.tests.TestBase;
 
 import static yandex.oshkin.tests.TestData.*;
 
-@Tag("Mobile")
-@Epic("Android")
+@Tag("mobile")
 @Owner("oshkinda")
 public class AndroidMobileTests extends TestBase {
 

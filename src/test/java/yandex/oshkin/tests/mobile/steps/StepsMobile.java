@@ -12,10 +12,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class StepsMobile {
 
-    Integer
-            countOrder = 0,
-            countFavorite = 0;
-
     @Step("Ищем товар")
     public StepsMobile searchProduct(String productCode, String productName) {
         openMainPage();
@@ -29,10 +25,11 @@ public class StepsMobile {
 
     @Step("Добавляем товар в корзину")
     public StepsMobile addProductToOrder(String productCode, String productName) {
+        int countOrder = 0;
         openProduct();
         checkOpenProductPage(productName, productCode);
         clickButtonAddProductToOrder();
-        countOrder = countOrder + 1;
+        countOrder++;
         checkAddedProductToOrder(countOrder);
         openOrder();
         checkOpenOrder();
@@ -51,10 +48,11 @@ public class StepsMobile {
 
     @Step("Добавляем товар в избранное")
     public StepsMobile addProductToFavoriteList(String productCode, String productName) {
+        int countFavorite = 0;
         openProduct();
         checkOpenProductPage(productName, productCode);
         addProductsToFavorite();
-        countFavorite = countFavorite + 1;
+        countFavorite++;
         checkAddedProductToFavorite(countFavorite);
         openFavorite();
         checkOpenFavorite();
@@ -165,7 +163,7 @@ public class StepsMobile {
         ElementsCollection listProducts =
                 $$(AppiumBy.id("ru.citilink:id/textViewCartProductName"));
         for (WebElement element : listProducts) {
-            if (element.getAttribute("text").equals(productName)){
+            if (element.getAttribute("text").equals(productName)) {
                 counter++;
             }
         }
@@ -231,7 +229,7 @@ public class StepsMobile {
         ElementsCollection listProducts =
                 $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
         for (WebElement element : listProducts) {
-            if (element.getAttribute("text").equals(productName)){
+            if (element.getAttribute("text").equals(productName)) {
                 counter++;
             }
         }
@@ -244,7 +242,7 @@ public class StepsMobile {
         ElementsCollection listProducts =
                 $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
         for (WebElement element : listProducts) {
-            if (element.getAttribute("text").equals(productName)){
+            if (element.getAttribute("text").equals(productName)) {
                 $(AppiumBy.id("ru.citilink:id/imageViewFavorite")).click();
             }
         }
@@ -255,9 +253,9 @@ public class StepsMobile {
     public StepsMobile checkDelAllProductFromFavorite(String productName) {
         int counter = 0;
         ElementsCollection listProducts =
-        $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
+                $$(AppiumBy.id("ru.citilink:id/textViewTitle"));
         for (WebElement element : listProducts) {
-            if (element.getAttribute("text").equals(productName)){
+            if (element.getAttribute("text").equals(productName)) {
                 counter++;
             }
         }

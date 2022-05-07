@@ -15,7 +15,13 @@ public class OrderPage {
 
     @Step("Открываем страницу корзины")
     public OrderPage openOrderPage() {
-        open("order/");
+        open("/order/");
+//        $(".Basket__title__text")
+//                .shouldHave(text("Корзина"));
+        return this;
+    }
+    @Step("Проверяем что открыта страница корзины")
+    public OrderPage checkOpenOrderPage() {
         $(".Basket__title__text")
                 .shouldHave(text("Корзина"));
         return this;
@@ -30,6 +36,13 @@ public class OrderPage {
     @Step("Очищаем корзину целиком")
     public OrderPage cleanOrder() {
         cleanOrderButton.click();
+//        $(".Basket__basket-empty-title")
+//                .shouldHave(text("В корзине нет товаров"));
+        return this;
+    }
+
+    @Step("Проверяем что корзина пуста")
+    public OrderPage checkCleanOrder() {
         $(".Basket__basket-empty-title")
                 .shouldHave(text("В корзине нет товаров"));
         return this;

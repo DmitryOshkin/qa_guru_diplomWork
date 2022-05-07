@@ -13,6 +13,14 @@ public class ProductPage {
             addCompareButton = $(".ProductCardLayout .js--ProductHeader__add-to-compare"),
             closePopUpButton = $(".UpsaleBasket__main-popup__close path");
 
+    @Step("Добавляем товар в корзину")
+    public ProductPage addToOrder(String productCode) {
+        addProductOrder();
+        checkResultAddOrder(productCode);
+        closePopUpOrder();
+        return this;
+    }
+
     @Step("Проверяем результат поиска")
     public ProductPage checkResultSearch(String value) {
         sleep(5000);

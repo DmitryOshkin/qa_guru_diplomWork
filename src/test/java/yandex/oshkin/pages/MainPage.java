@@ -11,9 +11,17 @@ public class MainPage {
     SelenideElement
             searchInput = $(".MainHeader__search .InputBox__input");
 
+    @Step("Ищем товар")
+    public MainPage searchProduct(String productCode) {
+        openMainPage();
+        closeCookies();
+        search(productCode);
+        return this;
+    }
+
     @Step("Открываем главную страницу")
     public MainPage openMainPage() {
-        open("");
+        open("/");
         $(".Main__category-wrapper .PopularCategoriesBox")
                 .shouldHave(text("Популярные категории"));
         return this;

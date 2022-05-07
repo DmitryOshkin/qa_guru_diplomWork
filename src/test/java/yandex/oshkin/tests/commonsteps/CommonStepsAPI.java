@@ -1,13 +1,10 @@
 package yandex.oshkin.tests.commonsteps;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 import yandex.oshkin.models.Basket.clearBasket.Basket;
-import yandex.oshkin.tests.TestBase;
 
 import java.util.Map;
 
-import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -17,33 +14,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static yandex.oshkin.spec.Specs.request;
 import static yandex.oshkin.spec.Specs.responseSpec200;
 
-public class CommonStepsAPI extends TestBase {
-    Basket basketClean = null;
-    int changeAmount = 0;
-    int basketCount = 0;
+public class CommonStepsAPI {
 
     @Step("Получаем cookies сессии")
     public static Map<String, String> getSessionCookies() {
-        return
-                step("Получаем cookies сессии", () -> {
+//        return
+//                step("Получаем cookies сессии", () -> {
                     Map<String, String> sessionCookies =
                             given()
                                     .log().all()
-                                    .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" )
                                     .when()
-                                    .get("")
+                                    .get("/")
                                     .then()
                                     .log().cookies()
                                     .statusCode(200)
                                     .extract()
                                     .cookies();
-
                     return sessionCookies;
-                });
+//                });
     }
 
     @Step("Добавляем товар в корзину")
     public CommonStepsAPI addToOrder(String productCode, int count) {
+        int basketCount = 0;
         basketCount = basketCount + count;
 
         given()
@@ -51,7 +44,7 @@ public class CommonStepsAPI extends TestBase {
                 .formParam("amount", count)
                 .log().params()
                 .when()
-                .get("basket/add/product/" + productCode + "/")
+                .get("/basket/add/product/" + productCode + "/")
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
@@ -63,12 +56,13 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Изменяем количество товара в корзине")
     public CommonStepsAPI changeProductCountToOrder(String productCode, int count) {
+        int changeAmount = 0;
         changeAmount = changeAmount + count;
 
         given()
                 .spec(request)
                 .when()
-                .get("basket/change/amount/" + productCode + "/" + changeAmount + "/")
+                .get("/basket/change/amount/" + productCode + "/" + changeAmount + "/")
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
@@ -79,11 +73,10 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Удаляем товар из корзины")
     public CommonStepsAPI delProductOrder(String productCode) {
-
         given()
                 .spec(request)
                 .when()
-                .get("basket/remove/" + productCode + "/")
+                .get("/basket/remove/" + productCode + "/")
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/delorderproduct_schema.json"))
@@ -94,11 +87,12 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Очищаем корзину")
     public CommonStepsAPI clearOrder() {
+        Basket basketClean = null;
         basketClean =
                 given()
                         .spec(request)
                         .when()
-                        .get("basket/clear/")
+                        .get("/basket/clear/")
                         .then()
                         .spec(responseSpec200)
                         .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
@@ -111,11 +105,10 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Добавляем товар в список сравнения")
     public CommonStepsAPI addToCompare(String productCode, int category) {
-
         given()
                 .spec(request)
                 .when()
-                .get("compare/add/product/" + productCode + "/" + category + "/")
+                .get("/compare/add/product/" + productCode + "/" + category + "/")
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtocompareproduct_schema.json"))
@@ -125,11 +118,10 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Удаляем товар из списка сравнения")
     public CommonStepsAPI delProductCompare(String productCode, int category) {
-
         given()
                 .spec(request)
                 .when()
-                .get("compare/remove/product/" + productCode + "/" + category + "/")
+                .get("/compare/remove/product/" + productCode + "/" + category + "/")
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/delcompareproduct_schema.json"))
@@ -139,11 +131,10 @@ public class CommonStepsAPI extends TestBase {
 
     @Step("Очищаем список сравнения")
     public CommonStepsAPI cleanProductCompare(int category) {
-
         given()
                 .spec(request)
                 .when()
-                .get("compare/remove/category/" + category + "/")
+                .get("/compare/remove/category/" + category + "/")
                 .then()
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/cleancompare_schema.json"))
