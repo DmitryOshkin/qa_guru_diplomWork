@@ -5,12 +5,13 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import yandex.oshkin.pages.ComparePage;
-import yandex.oshkin.pages.MainPage;
-import yandex.oshkin.pages.OrderPage;
-import yandex.oshkin.pages.ProductPage;
+import yandex.oshkin.pages.mobilePages.*;
+import yandex.oshkin.pages.uiPages.ComparePageUi;
+import yandex.oshkin.pages.uiPages.MainPageUi;
+import yandex.oshkin.pages.uiPages.OrderPageUi;
+import yandex.oshkin.pages.uiPages.ProductPageUi;
 import yandex.oshkin.tests.commonsteps.CommonStepsAPI;
-import yandex.oshkin.tests.mobile.steps.StepsMobile;
+import yandex.oshkin.tests.commonsteps.CommonStepsMobile;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
@@ -20,11 +21,16 @@ import static yandex.oshkin.helpers.DeviceSelection.getDeviceDriver;
 
 public class TestBase {
 
-    public MainPage mainPage = new MainPage();
-    public ProductPage productPage = new ProductPage();
-    public OrderPage orderPage = new OrderPage();
-    public ComparePage comparePage = new ComparePage();
-    public StepsMobile stepMobile = new StepsMobile();
+    public MainPageUi mainPageUi = new MainPageUi();
+    public ProductPageUi productPageUi = new ProductPageUi();
+    public OrderPageUi orderPageUi = new OrderPageUi();
+    public ComparePageUi comparePageUi = new ComparePageUi();
+    public MainPageMobile mainPageMobile = new MainPageMobile();
+    public ProductPageMobile productPageMobile = new ProductPageMobile();
+    public OrderPageMobile orderPageMobile = new OrderPageMobile();
+    public FavoritePageMobile favoritePageMobile = new FavoritePageMobile();
+    public SearchPageMobile searchPageMobile = new SearchPageMobile();
+    public CommonStepsMobile commonStepsMobile = new CommonStepsMobile();
     public CommonStepsAPI commonStepsAPI = new CommonStepsAPI();
 
     private static final String deviceHost = System.getProperty("deviceHost", "ui");  // ui / emulation / browserstack / realmobile

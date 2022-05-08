@@ -15,6 +15,8 @@ public class APITests extends TestBase {
     @Test
     @DisplayName("Добавление товара в корзину и изменение его количества")
     public void addToOrderProductTest() {
+        int basketCount = 0;
+        basketCount = basketCount + 4;
         commonStepsAPI
                 .addToOrder(product_code_2, 4)
                 .changeProductCountToOrder(product_code_2, 7);
@@ -23,6 +25,8 @@ public class APITests extends TestBase {
     @Test
     @DisplayName("Удаление товара из корзины")
     public void delOrderProductTest() {
+        int basketCount = 0;
+        basketCount = basketCount + 4;
         commonStepsAPI
                 .addToOrder(product_code_2, 4)
                 .delProductOrder(product_code_2);
@@ -31,11 +35,14 @@ public class APITests extends TestBase {
     @Test
     @DisplayName("Очистка корзины")
     public void clearOrderProductTest() {
-        commonStepsAPI
-                .addToOrder(product_code_2, 4)
-                .addToOrder(product_code_1, 3)
-                .addToOrder(product_code_3, 8)
-                .clearOrder();
+        int basketCount = 0;
+        basketCount = basketCount + 4;
+        commonStepsAPI.addToOrder(product_code_2, 4);
+        basketCount = basketCount + 3;
+        commonStepsAPI.addToOrder(product_code_1, 3);
+        basketCount = basketCount + 8;
+        commonStepsAPI.addToOrder(product_code_3, 8);
+        commonStepsAPI.clearOrder();
     }
 
     @Test

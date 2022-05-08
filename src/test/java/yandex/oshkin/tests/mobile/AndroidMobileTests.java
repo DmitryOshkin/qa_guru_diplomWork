@@ -15,54 +15,139 @@ public class AndroidMobileTests extends TestBase {
     @Test
     @DisplayName("Тестирование поиска")
     void searchAppTest() {
-        stepMobile
-                .skipBanner()
-                .searchProduct(product_code_4, product_name_4);
+        mainPageMobile
+                .skipBanner();
+        commonStepsMobile
+                .searchProduct(product_code_4);
+        searchPageMobile
+                .checkSearchResult(product_name_4);
     }
 
     @Test
     @DisplayName("Тестирование добавления товара в корзину")
     void addProductToOrderTest() {
-        stepMobile
-                .skipBanner()
-                .searchProduct(product_code_1, product_name_1)
+        int countOrder = 0;
+        mainPageMobile
+                .skipBanner();
+        commonStepsMobile
+                .searchProduct(product_code_1);
+        searchPageMobile
+                .checkSearchResult(product_name_1);
+        commonStepsMobile
                 .addProductToOrder(product_code_1, product_name_1);
+        countOrder++;
+        productPageMobile
+                .checkChangeCountProductToOrder(countOrder);
+        commonStepsMobile
+                .checkAddedProductToOrder(product_name_1);
     }
 
     @Test
     @DisplayName("Тестирование удаления всех товаров из корзины")
     void DeleteProductFromOrderTest() {
-        stepMobile
-                .skipBanner()
-                .searchProduct(product_code_1, product_name_1)
-                .addProductToOrder(product_code_1, product_name_1)
-                .searchProduct(product_code_2, product_name_2)
-                .addProductToOrder(product_code_2, product_name_2)
-                .searchProduct(product_code_4, product_name_4)
-                .addProductToOrder(product_code_4, product_name_4)
+        int countOrder = 0;
+        mainPageMobile
+                .skipBanner();
+        commonStepsMobile
+                .searchProduct(product_code_1);
+        searchPageMobile
+                .checkSearchResult(product_name_1);
+        commonStepsMobile
+                .addProductToOrder(product_code_1, product_name_1);
+        countOrder++;
+        productPageMobile
+                .checkChangeCountProductToOrder(countOrder);
+        commonStepsMobile
+                .checkAddedProductToOrder(product_name_1);
+        commonStepsMobile
+                .searchProduct(product_code_2);
+        searchPageMobile
+                .checkSearchResult(product_name_2);
+        commonStepsMobile
+                .addProductToOrder(product_code_2, product_name_2);
+        countOrder++;
+        productPageMobile
+                .checkChangeCountProductToOrder(countOrder);
+        commonStepsMobile
+                .checkAddedProductToOrder(product_name_2);
+        commonStepsMobile
+                .searchProduct(product_code_4);
+        searchPageMobile
+                .checkSearchResult(product_name_4);
+        commonStepsMobile
+                .addProductToOrder(product_code_4, product_name_4);
+        countOrder++;
+        productPageMobile
+                .checkChangeCountProductToOrder(countOrder);
+        commonStepsMobile
+                .checkAddedProductToOrder(product_name_4);
+        commonStepsMobile
                 .deleteAllProductFromOrder();
+        orderPageMobile
+                .checkDeleteAllProductsFromOrder();
     }
 
     @Test
     @DisplayName("Тестирование добавления товара в избранное")
     void addProductToFavoriteTest() {
-        stepMobile
-                .skipBanner()
-                .searchProduct(product_code_1, product_name_1)
+        int countFavorite = 0;
+        mainPageMobile
+                .skipBanner();
+        commonStepsMobile
+                .searchProduct(product_code_1);
+        searchPageMobile
+                .checkSearchResult(product_name_1);
+        commonStepsMobile
                 .addProductToFavoriteList(product_code_1, product_name_1);
+        countFavorite++;
+        productPageMobile
+                .checkChangeCountProductToFavorite(countFavorite);
+        commonStepsMobile
+                .checkAddedProductToFavoriteList(product_name_1);
     }
 
     @Test
     @DisplayName("Тестирование удаления товара из избранного")
     void DeleteProductFromFavoriteTest() {
-        stepMobile
-                .skipBanner()
-                .searchProduct(product_code_1, product_name_1)
-                .addProductToFavoriteList(product_code_1, product_name_1)
-                .searchProduct(product_code_2, product_name_2)
-                .addProductToFavoriteList(product_code_2, product_name_2)
-                .searchProduct(product_code_4, product_name_4)
-                .addProductToFavoriteList(product_code_4, product_name_4)
+        int countFavorite = 0;
+        mainPageMobile
+                .skipBanner();
+        commonStepsMobile
+                .searchProduct(product_code_1);
+        searchPageMobile
+                .checkSearchResult(product_name_1);
+        commonStepsMobile
+                .addProductToFavoriteList(product_code_1, product_name_1);
+        countFavorite++;
+        productPageMobile
+                .checkChangeCountProductToFavorite(countFavorite);
+        commonStepsMobile
+                .checkAddedProductToFavoriteList(product_name_1);
+        commonStepsMobile
+                .searchProduct(product_code_2);
+        searchPageMobile
+                .checkSearchResult(product_name_2);
+        commonStepsMobile
+                .addProductToFavoriteList(product_code_2, product_name_2);
+        countFavorite++;
+        productPageMobile
+                .checkChangeCountProductToFavorite(countFavorite);
+        commonStepsMobile
+                .checkAddedProductToFavoriteList(product_name_2);
+        commonStepsMobile
+                .searchProduct(product_code_4);
+        searchPageMobile
+                .checkSearchResult(product_name_4);
+        commonStepsMobile
+                .addProductToFavoriteList(product_code_4, product_name_4);
+        countFavorite++;
+        productPageMobile
+                .checkChangeCountProductToFavorite(countFavorite);
+        commonStepsMobile
+                .checkAddedProductToFavoriteList(product_name_4);
+        commonStepsMobile
                 .deleteProductFromFavorite(product_name_2);
+        favoritePageMobile
+                .checkDelProductFromFavorite(product_name_2);
     }
 }

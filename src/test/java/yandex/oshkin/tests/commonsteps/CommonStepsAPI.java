@@ -1,43 +1,40 @@
 package yandex.oshkin.tests.commonsteps;
 
 import io.qameta.allure.Step;
+import org.assertj.core.api.Assertions;
 import yandex.oshkin.models.Basket.clearBasket.Basket;
 
 import java.util.Map;
 
-import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static yandex.oshkin.spec.Specs.request;
 import static yandex.oshkin.spec.Specs.responseSpec200;
 
-public class CommonStepsAPI {
+public class CommonStepsAPI extends Basket {
 
     @Step("Получаем cookies сессии")
     public static Map<String, String> getSessionCookies() {
-//        return
-//                step("Получаем cookies сессии", () -> {
-                    Map<String, String> sessionCookies =
-                            given()
-                                    .log().all()
-                                    .when()
-                                    .get("/")
-                                    .then()
-                                    .log().cookies()
-                                    .statusCode(200)
-                                    .extract()
-                                    .cookies();
-                    return sessionCookies;
-//                });
+
+        Map<String, String> sessionCookies =
+                given()
+                        .log().all()
+                        .when()
+                        .get("/")
+                        .then()
+                        .log().cookies()
+                        .statusCode(200)
+                        .extract()
+                        .cookies();
+        return sessionCookies;
     }
 
     @Step("Добавляем товар в корзину")
     public CommonStepsAPI addToOrder(String productCode, int count) {
-        int basketCount = 0;
-        basketCount = basketCount + count;
+//        int basketCount = 0;
+//        basketCount = basketCount + count;
 
         given()
                 .spec(request)
@@ -49,8 +46,8 @@ public class CommonStepsAPI {
                 .spec(responseSpec200)
                 .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
                 .body("storage.cart.list." + productCode + ".id", is(productCode))
-                .body("storage.cart.list." + productCode + ".amount", is(count))
-                .body("storage.cart.basketCount", is(basketCount));
+                .body("storage.cart.list." + productCode + ".amount", is(count));
+        //  .body("storage.cart.basketCount", is(basketCount));
         return this;
     }
 
@@ -98,8 +95,8 @@ public class CommonStepsAPI {
                         .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
                         .extract().body().as(Basket.class);
 
-        assertEquals(Boolean.TRUE, basketClean.getStorage().getCart().getList().isEmpty());
-        assertEquals(0, basketClean.getStorage().getCart().getBasketCount());
+        Assertions.assertThat(basketClean.getStorage().getCart().getList().isEmpty());
+        Assertions.assertThat(basketClean.getStorage().getCart().getBasketCount()).isEqualTo(0);
         return this;
     }
 

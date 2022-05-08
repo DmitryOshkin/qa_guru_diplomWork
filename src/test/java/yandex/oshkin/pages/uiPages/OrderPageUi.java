@@ -1,4 +1,4 @@
-package yandex.oshkin.pages;
+package yandex.oshkin.pages.uiPages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -7,38 +7,39 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class OrderPage {
+public class OrderPageUi {
     SelenideElement
             cleanOrderButton = $(".OrderFinalPrice__empty-cart"),
             cleanOrderProductButton =
                     $(".ProductListForBasket__item .ProductCardForBasket__button-icon_remove");
 
     @Step("Открываем страницу корзины")
-    public OrderPage openOrderPage() {
+    public OrderPageUi openOrderPage() {
         open("/order/");
         return this;
     }
+
     @Step("Проверяем что открыта страница корзины")
-    public OrderPage checkOpenOrderPage() {
+    public OrderPageUi checkOpenOrderPage() {
         $(".Basket__title__text")
                 .shouldHave(text("Корзина"));
         return this;
     }
 
     @Step("Удаляем товар из корзины")
-    public OrderPage delProductOrder() {
+    public OrderPageUi delProductOrder() {
         cleanOrderProductButton.click();
         return this;
     }
 
     @Step("Очищаем корзину целиком")
-    public OrderPage cleanOrder() {
+    public OrderPageUi cleanOrder() {
         cleanOrderButton.click();
         return this;
     }
 
     @Step("Проверяем что корзина пуста")
-    public OrderPage checkCleanOrder() {
+    public OrderPageUi checkCleanOrder() {
         $(".Basket__basket-empty-title")
                 .shouldHave(text("В корзине нет товаров"));
         return this;

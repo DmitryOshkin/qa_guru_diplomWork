@@ -20,9 +20,9 @@ public class UITests extends TestBase {
     @Test
     @DisplayName("Поиск товара")
     void searchTest() {
-        mainPage
+        mainPageUi
                 .searchProduct(product_code_1);
-        productPage
+        productPageUi
                 .checkResultSearch(product_code_1);
     }
 
@@ -30,15 +30,14 @@ public class UITests extends TestBase {
     @DisplayName("Добавление товара в корзину")
     void addProductOrderTest() {
         int countOrder = 0;
-
-        mainPage
+        mainPageUi
                 .searchProduct(product_code_2);
-        productPage
+        productPageUi
                 .checkResultSearch(product_code_2);
-        productPage
+        productPageUi
                 .addToOrder(product_code_2);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
     }
 
@@ -46,15 +45,14 @@ public class UITests extends TestBase {
     @ValueSource(strings = {"1442049", "1442048", "1114499"})
     void addProductCompareTest(String productCode) {
         int countCompare = 0;
-
-        mainPage
+        mainPageUi
                 .searchProduct(productCode);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode);
-        productPage
+        productPageUi
                 .addProductCompare();
         countCompare++;
-        mainPage
+        mainPageUi
                 .checkCompareCount(String.valueOf(countCompare));
     }
 
@@ -62,37 +60,36 @@ public class UITests extends TestBase {
     @CsvSource(value = {"1442049, 1442048, 1114499"})
     void delProductOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         int countOrder = 0;
-
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_1);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_1)
                 .addToOrder(productCode_1);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_2);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_2)
                 .addToOrder(productCode_2);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_3);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_3)
                 .addToOrder(productCode_3);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
-        orderPage
+        orderPageUi
                 .openOrderPage()
                 .checkOpenOrderPage()
                 .delProductOrder();
         countOrder--;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
     }
 
@@ -100,32 +97,31 @@ public class UITests extends TestBase {
     @CsvFileSource(resources = "/data/uidata.csv")
     void cleanOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         int countOrder = 0;
-
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_1);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_1)
                 .addToOrder(productCode_1);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_2);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_2)
                 .addToOrder(productCode_2);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_3);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_3)
                 .addToOrder(productCode_3);
         countOrder++;
-        mainPage
+        mainPageUi
                 .checkOrderCount(String.valueOf(countOrder));
-        orderPage
+        orderPageUi
                 .openOrderPage()
                 .checkOpenOrderPage()
                 .cleanOrder()
@@ -136,32 +132,31 @@ public class UITests extends TestBase {
     @CsvFileSource(resources = "/data/uidata.csv")
     void cleanCompareTest(String productCode_1, String productCode_2, String productCode_3) {
         int countCompare = 0;
-
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_1);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_1)
                 .addProductCompare();
         countCompare++;
-        mainPage
+        mainPageUi
                 .checkCompareCount(String.valueOf(countCompare));
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_2);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_2)
                 .addProductCompare();
         countCompare++;
-        mainPage
+        mainPageUi
                 .checkCompareCount(String.valueOf(countCompare));
-        mainPage
+        mainPageUi
                 .searchProduct(productCode_3);
-        productPage
+        productPageUi
                 .checkResultSearch(productCode_3)
                 .addProductCompare();
         countCompare++;
-        mainPage
+        mainPageUi
                 .checkCompareCount(String.valueOf(countCompare));
-        comparePage
+        comparePageUi
                 .openComparePage()
                 .checkOpenComparePage()
                 .cleanCompare()
