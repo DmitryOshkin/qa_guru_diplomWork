@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import yandex.oshkin.tests.TestBase;
 
+import java.util.Map;
+
 import static yandex.oshkin.tests.TestData.*;
 
 @Tag("mobile")
@@ -48,39 +50,21 @@ public class AndroidMobileTests extends TestBase {
         int countOrder = 0;
         mainPageMobile
                 .skipBanner();
-        commonStepsMobile
-                .searchProduct(product_code_1);
-        searchPageMobile
-                .checkSearchResult(product_name_1);
-        commonStepsMobile
-                .addProductToOrder(product_code_1, product_name_1);
-        countOrder++;
-        productPageMobile
-                .checkChangeCountProductToOrder(countOrder);
-        commonStepsMobile
-                .checkAddedProductToOrder(product_name_1);
-        commonStepsMobile
-                .searchProduct(product_code_2);
-        searchPageMobile
-                .checkSearchResult(product_name_2);
-        commonStepsMobile
-                .addProductToOrder(product_code_2, product_name_2);
-        countOrder++;
-        productPageMobile
-                .checkChangeCountProductToOrder(countOrder);
-        commonStepsMobile
-                .checkAddedProductToOrder(product_name_2);
-        commonStepsMobile
-                .searchProduct(product_code_4);
-        searchPageMobile
-                .checkSearchResult(product_name_4);
-        commonStepsMobile
-                .addProductToOrder(product_code_4, product_name_4);
-        countOrder++;
-        productPageMobile
-                .checkChangeCountProductToOrder(countOrder);
-        commonStepsMobile
-                .checkAddedProductToOrder(product_name_4);
+        Map<String, String> products =
+                Map.of(product_code_1, product_name_1, product_code_2, product_name_2, product_code_4, product_name_4);
+        for (Map.Entry<String, String> entry : products.entrySet()) {
+            commonStepsMobile
+                    .searchProduct(entry.getKey());
+            searchPageMobile
+                    .checkSearchResult(entry.getValue());
+            commonStepsMobile
+                    .addProductToOrder(entry.getKey(), entry.getValue());
+            countOrder++;
+            productPageMobile
+                    .checkChangeCountProductToOrder(countOrder);
+            commonStepsMobile
+                    .checkAddedProductToOrder(entry.getValue());
+        }
         commonStepsMobile
                 .deleteAllProductFromOrder();
         orderPageMobile
@@ -112,39 +96,21 @@ public class AndroidMobileTests extends TestBase {
         int countFavorite = 0;
         mainPageMobile
                 .skipBanner();
-        commonStepsMobile
-                .searchProduct(product_code_1);
-        searchPageMobile
-                .checkSearchResult(product_name_1);
-        commonStepsMobile
-                .addProductToFavoriteList(product_code_1, product_name_1);
-        countFavorite++;
-        productPageMobile
-                .checkChangeCountProductToFavorite(countFavorite);
-        commonStepsMobile
-                .checkAddedProductToFavoriteList(product_name_1);
-        commonStepsMobile
-                .searchProduct(product_code_2);
-        searchPageMobile
-                .checkSearchResult(product_name_2);
-        commonStepsMobile
-                .addProductToFavoriteList(product_code_2, product_name_2);
-        countFavorite++;
-        productPageMobile
-                .checkChangeCountProductToFavorite(countFavorite);
-        commonStepsMobile
-                .checkAddedProductToFavoriteList(product_name_2);
-        commonStepsMobile
-                .searchProduct(product_code_4);
-        searchPageMobile
-                .checkSearchResult(product_name_4);
-        commonStepsMobile
-                .addProductToFavoriteList(product_code_4, product_name_4);
-        countFavorite++;
-        productPageMobile
-                .checkChangeCountProductToFavorite(countFavorite);
-        commonStepsMobile
-                .checkAddedProductToFavoriteList(product_name_4);
+        Map<String, String> products =
+                Map.of(product_code_1, product_name_1, product_code_2, product_name_2, product_code_4, product_name_4);
+        for (Map.Entry<String, String> entry : products.entrySet()) {
+            commonStepsMobile
+                    .searchProduct(entry.getKey());
+            searchPageMobile
+                    .checkSearchResult(entry.getValue());
+            commonStepsMobile
+                    .addProductToFavoriteList(entry.getKey(), entry.getValue());
+            countFavorite++;
+            productPageMobile
+                    .checkChangeCountProductToFavorite(countFavorite);
+            commonStepsMobile
+                    .checkAddedProductToFavoriteList(entry.getValue());
+        }
         commonStepsMobile
                 .deleteProductFromFavorite(product_name_2);
         favoritePageMobile
