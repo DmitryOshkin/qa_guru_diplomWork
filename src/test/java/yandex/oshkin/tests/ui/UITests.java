@@ -10,6 +10,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import yandex.oshkin.tests.TestBase;
 
+import java.util.List;
+
 import static yandex.oshkin.tests.TestData.product_code_1;
 import static yandex.oshkin.tests.TestData.product_code_2;
 
@@ -60,30 +62,17 @@ public class UITests extends TestBase {
     @CsvSource(value = {"1442049, 1442048, 1114499"})
     void delProductOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         int countOrder = 0;
-        mainPageUi
-                .searchProduct(productCode_1);
-        productPageUi
-                .checkResultSearch(productCode_1)
-                .addToOrder(productCode_1);
-        countOrder++;
-        mainPageUi
-                .checkOrderCount(String.valueOf(countOrder));
-        mainPageUi
-                .searchProduct(productCode_2);
-        productPageUi
-                .checkResultSearch(productCode_2)
-                .addToOrder(productCode_2);
-        countOrder++;
-        mainPageUi
-                .checkOrderCount(String.valueOf(countOrder));
-        mainPageUi
-                .searchProduct(productCode_3);
-        productPageUi
-                .checkResultSearch(productCode_3)
-                .addToOrder(productCode_3);
-        countOrder++;
-        mainPageUi
-                .checkOrderCount(String.valueOf(countOrder));
+        List<String> products = List.of(productCode_1, productCode_2, productCode_3);
+        for (String element : products) {
+            mainPageUi
+                    .searchProduct(element);
+            productPageUi
+                    .checkResultSearch(element)
+                    .addToOrder(element);
+            countOrder++;
+            mainPageUi
+                    .checkOrderCount(String.valueOf(countOrder));
+        }
         orderPageUi
                 .openOrderPage()
                 .checkOpenOrderPage()
@@ -97,30 +86,17 @@ public class UITests extends TestBase {
     @CsvFileSource(resources = "/data/uidata.csv")
     void cleanOrderTest(String productCode_1, String productCode_2, String productCode_3) {
         int countOrder = 0;
-        mainPageUi
-                .searchProduct(productCode_1);
-        productPageUi
-                .checkResultSearch(productCode_1)
-                .addToOrder(productCode_1);
-        countOrder++;
-        mainPageUi
-                .checkOrderCount(String.valueOf(countOrder));
-        mainPageUi
-                .searchProduct(productCode_2);
-        productPageUi
-                .checkResultSearch(productCode_2)
-                .addToOrder(productCode_2);
-        countOrder++;
-        mainPageUi
-                .checkOrderCount(String.valueOf(countOrder));
-        mainPageUi
-                .searchProduct(productCode_3);
-        productPageUi
-                .checkResultSearch(productCode_3)
-                .addToOrder(productCode_3);
-        countOrder++;
-        mainPageUi
-                .checkOrderCount(String.valueOf(countOrder));
+        List<String> products = List.of(productCode_1, productCode_2, productCode_3);
+        for (String element : products) {
+            mainPageUi
+                    .searchProduct(element);
+            productPageUi
+                    .checkResultSearch(element)
+                    .addToOrder(element);
+            countOrder++;
+            mainPageUi
+                    .checkOrderCount(String.valueOf(countOrder));
+        }
         orderPageUi
                 .openOrderPage()
                 .checkOpenOrderPage()
@@ -132,30 +108,17 @@ public class UITests extends TestBase {
     @CsvFileSource(resources = "/data/uidata.csv")
     void cleanCompareTest(String productCode_1, String productCode_2, String productCode_3) {
         int countCompare = 0;
-        mainPageUi
-                .searchProduct(productCode_1);
-        productPageUi
-                .checkResultSearch(productCode_1)
-                .addProductCompare();
-        countCompare++;
-        mainPageUi
-                .checkCompareCount(String.valueOf(countCompare));
-        mainPageUi
-                .searchProduct(productCode_2);
-        productPageUi
-                .checkResultSearch(productCode_2)
-                .addProductCompare();
-        countCompare++;
-        mainPageUi
-                .checkCompareCount(String.valueOf(countCompare));
-        mainPageUi
-                .searchProduct(productCode_3);
-        productPageUi
-                .checkResultSearch(productCode_3)
-                .addProductCompare();
-        countCompare++;
-        mainPageUi
-                .checkCompareCount(String.valueOf(countCompare));
+        List<String> products = List.of(productCode_1, productCode_2, productCode_3);
+        for (String element : products) {
+            mainPageUi
+                    .searchProduct(element);
+            productPageUi
+                    .checkResultSearch(element)
+                    .addProductCompare();
+            countCompare++;
+            mainPageUi
+                    .checkCompareCount(String.valueOf(countCompare));
+        }
         comparePageUi
                 .openComparePage()
                 .checkOpenComparePage()

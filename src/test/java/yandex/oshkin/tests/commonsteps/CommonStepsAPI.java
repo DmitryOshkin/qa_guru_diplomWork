@@ -1,8 +1,7 @@
 package yandex.oshkin.tests.commonsteps;
 
 import io.qameta.allure.Step;
-import org.assertj.core.api.Assertions;
-import yandex.oshkin.models.Basket.clearBasket.Basket;
+import yandex.oshkin.models.Basket.clearBasket.ClearBasket;
 
 import java.util.Map;
 
@@ -13,7 +12,7 @@ import static org.hamcrest.Matchers.not;
 import static yandex.oshkin.spec.Specs.request;
 import static yandex.oshkin.spec.Specs.responseSpec200;
 
-public class CommonStepsAPI extends Basket {
+public class CommonStepsAPI extends ClearBasket {
 
     @Step("Получаем cookies сессии")
     public static Map<String, String> getSessionCookies() {
@@ -33,8 +32,6 @@ public class CommonStepsAPI extends Basket {
 
     @Step("Добавляем товар в корзину")
     public CommonStepsAPI addToOrder(String productCode, int count) {
-//        int basketCount = 0;
-//        basketCount = basketCount + count;
 
         given()
                 .spec(request)
@@ -44,27 +41,22 @@ public class CommonStepsAPI extends Basket {
                 .get("/basket/add/product/" + productCode + "/")
                 .then()
                 .spec(responseSpec200)
-                .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
                 .body("storage.cart.list." + productCode + ".id", is(productCode))
                 .body("storage.cart.list." + productCode + ".amount", is(count));
-        //  .body("storage.cart.basketCount", is(basketCount));
         return this;
     }
 
     @Step("Изменяем количество товара в корзине")
     public CommonStepsAPI changeProductCountToOrder(String productCode, int count) {
-        int changeAmount = 0;
-        changeAmount = changeAmount + count;
 
         given()
                 .spec(request)
                 .when()
-                .get("/basket/change/amount/" + productCode + "/" + changeAmount + "/")
+                .get("/basket/change/amount/" + productCode + "/" + count + "/")
                 .then()
                 .spec(responseSpec200)
-                .body(matchesJsonSchemaInClasspath("schemas/addtoorderproduct_schema.json"))
                 .body("storage.cart.list." + productCode + ".id", is(productCode))
-                .body("storage.cart.list." + productCode + ".amount", is(changeAmount));
+                .body("storage.cart.list." + productCode + ".amount", is(count));
         return this;
     }
 
@@ -83,9 +75,8 @@ public class CommonStepsAPI extends Basket {
     }
 
     @Step("Очищаем корзину")
-    public CommonStepsAPI clearOrder() {
-        Basket basketClean = null;
-        basketClean =
+    public ClearBasket clearOrder() {
+        return
                 given()
                         .spec(request)
                         .when()
@@ -93,11 +84,7 @@ public class CommonStepsAPI extends Basket {
                         .then()
                         .spec(responseSpec200)
                         .body(matchesJsonSchemaInClasspath("schemas/cleanorder_schema.json"))
-                        .extract().body().as(Basket.class);
-
-        Assertions.assertThat(basketClean.getStorage().getCart().getList().isEmpty());
-        Assertions.assertThat(basketClean.getStorage().getCart().getBasketCount()).isEqualTo(0);
-        return this;
+                        .extract().body().as(ClearBasket.class);
     }
 
     @Step("Добавляем товар в список сравнения")
