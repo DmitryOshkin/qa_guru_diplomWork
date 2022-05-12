@@ -5,9 +5,9 @@ import io.restassured.RestAssured;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import yandex.oshkin.config.selenoid.Selenoid;
 import yandex.oshkin.config.webapp.App;
-import yandex.oshkin.helpers.Attach;
 
 import static java.lang.String.format;
+import static yandex.oshkin.helpers.Attach.attachAsText;
 import static yandex.oshkin.helpers.CustomAllureListener.withCustomTemplates;
 
 public class UIWebDriver {
@@ -35,9 +35,9 @@ public class UIWebDriver {
         Configuration.baseUrl = App.config.webUrl();
         RestAssured.filters(withCustomTemplates());
 
-        Attach.attachAsText("Browser: ", browser);
-        Attach.attachAsText("Version: ", browserVersion);
-        Attach.attachAsText("BrowserSize: ", browserSize);
-        Attach.attachAsText("Remote Url: ", remoteUrl);
+        attachAsText("Browser: ", browser);
+        attachAsText("Version: ", browserVersion);
+        attachAsText("BrowserSize: ", browserSize);
+        attachAsText("Remote Url: ", remoteUrl);
     }
 }

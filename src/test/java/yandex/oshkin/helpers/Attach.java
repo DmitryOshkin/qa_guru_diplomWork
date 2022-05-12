@@ -24,7 +24,7 @@ public class Attach {
     }
 
     @Attachment(value = "PageSource html", type = "text/html", fileExtension = "html")
-    public static byte[] PageSourceHtml() {
+    public static byte[] pageSourceHtml() {
         return WebDriverRunner.source().getBytes(StandardCharsets.UTF_8);
     }
 
@@ -41,16 +41,16 @@ public class Attach {
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-    public static String SelenoidVideo(String sessionId) {
+    public static String selenoidVideo(String sessionId) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + SelenoidGetVideo.selenoidVideoUrl(sessionId)
+                + VideoUrl.selenoidGetVideoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String browserstackVideo(String sessionId) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + BrowserstackGetVideo.browserstackVideoUrl(sessionId)
+                + VideoUrl.browserstackGetVideoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
     }
 
